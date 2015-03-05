@@ -14,6 +14,7 @@
 		AEDCDADA1AA8E17800F35E0B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEDCDAD91AA8E17800F35E0B /* Images.xcassets */; };
 		AEDCDADD1AA8E17800F35E0B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEDCDADB1AA8E17800F35E0B /* LaunchScreen.xib */; };
 		AEDCDAE91AA8E17800F35E0B /* Health_SocialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDCDAE81AA8E17800F35E0B /* Health_SocialTests.swift */; };
+		AEDCDAF31AA8E93700F35E0B /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDCDAF21AA8E93700F35E0B /* SettingsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		AEDCDAE21AA8E17800F35E0B /* Health SocialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Health SocialTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEDCDAE71AA8E17800F35E0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEDCDAE81AA8E17800F35E0B /* Health_SocialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Health_SocialTests.swift; sourceTree = "<group>"; };
+		AEDCDAF21AA8E93700F35E0B /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				AEDCDAD21AA8E17800F35E0B /* FirstViewController.swift */,
 				AEDCDAD41AA8E17800F35E0B /* SecondViewController.swift */,
 				AEDCDAD61AA8E17800F35E0B /* Main.storyboard */,
+				AEDCDAF21AA8E93700F35E0B /* SettingsTableViewController.swift */,
 				AEDCDAD91AA8E17800F35E0B /* Images.xcassets */,
 				AEDCDADB1AA8E17800F35E0B /* LaunchScreen.xib */,
 				AEDCDACE1AA8E17800F35E0B /* Supporting Files */,
@@ -215,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEDCDAF31AA8E93700F35E0B /* SettingsTableViewController.swift in Sources */,
 				AEDCDAD51AA8E17800F35E0B /* SecondViewController.swift in Sources */,
 				AEDCDAD11AA8E17800F35E0B /* AppDelegate.swift in Sources */,
 				AEDCDAD31AA8E17800F35E0B /* FirstViewController.swift in Sources */,
