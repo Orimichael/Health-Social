@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE3D9F2B1AAE6FF100A43370 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3D9F2A1AAE6FF100A43370 /* HomeViewController.swift */; };
+		AE3D9F2D1AAE7BF300A43370 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3D9F2C1AAE7BF300A43370 /* SignUpViewController.swift */; };
 		AEDCDAD11AA8E17800F35E0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDCDAD01AA8E17800F35E0B /* AppDelegate.swift */; };
 		AEDCDAD31AA8E17800F35E0B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDCDAD21AA8E17800F35E0B /* FirstViewController.swift */; };
 		AEDCDAD51AA8E17800F35E0B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDCDAD41AA8E17800F35E0B /* SecondViewController.swift */; };
@@ -15,6 +17,8 @@
 		AEDCDADD1AA8E17800F35E0B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEDCDADB1AA8E17800F35E0B /* LaunchScreen.xib */; };
 		AEDCDAE91AA8E17800F35E0B /* Health_SocialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDCDAE81AA8E17800F35E0B /* Health_SocialTests.swift */; };
 		AEDCDAF31AA8E93700F35E0B /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDCDAF21AA8E93700F35E0B /* SettingsTableViewController.swift */; };
+		AEDCDAF51AAE073100F35E0B /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDCDAF41AAE073100F35E0B /* Person.swift */; };
+		AEDCDAF71AAE0D4200F35E0B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDCDAF61AAE0D4200F35E0B /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AE3D9F2A1AAE6FF100A43370 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		AE3D9F2C1AAE7BF300A43370 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		AEDCDACB1AA8E17800F35E0B /* Health Social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Health Social.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEDCDACF1AA8E17800F35E0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEDCDAD01AA8E17800F35E0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +46,8 @@
 		AEDCDAE71AA8E17800F35E0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEDCDAE81AA8E17800F35E0B /* Health_SocialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Health_SocialTests.swift; sourceTree = "<group>"; };
 		AEDCDAF21AA8E93700F35E0B /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		AEDCDAF41AAE073100F35E0B /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		AEDCDAF61AAE0D4200F35E0B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +93,10 @@
 				AEDCDAD21AA8E17800F35E0B /* FirstViewController.swift */,
 				AEDCDAD41AA8E17800F35E0B /* SecondViewController.swift */,
 				AEDCDAD61AA8E17800F35E0B /* Main.storyboard */,
+				AE3D9F2C1AAE7BF300A43370 /* SignUpViewController.swift */,
+				AE3D9F2A1AAE6FF100A43370 /* HomeViewController.swift */,
+				AEDCDAF61AAE0D4200F35E0B /* LoginViewController.swift */,
+				AEDCDAF41AAE073100F35E0B /* Person.swift */,
 				AEDCDAF21AA8E93700F35E0B /* SettingsTableViewController.swift */,
 				AEDCDAD91AA8E17800F35E0B /* Images.xcassets */,
 				AEDCDADB1AA8E17800F35E0B /* LaunchScreen.xib */,
@@ -218,9 +230,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEDCDAF71AAE0D4200F35E0B /* LoginViewController.swift in Sources */,
+				AEDCDAF51AAE073100F35E0B /* Person.swift in Sources */,
+				AE3D9F2D1AAE7BF300A43370 /* SignUpViewController.swift in Sources */,
 				AEDCDAF31AA8E93700F35E0B /* SettingsTableViewController.swift in Sources */,
 				AEDCDAD51AA8E17800F35E0B /* SecondViewController.swift in Sources */,
 				AEDCDAD11AA8E17800F35E0B /* AppDelegate.swift in Sources */,
+				AE3D9F2B1AAE6FF100A43370 /* HomeViewController.swift in Sources */,
 				AEDCDAD31AA8E17800F35E0B /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +431,7 @@
 				AEDCDAEE1AA8E17800F35E0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AEDCDAEF1AA8E17800F35E0B /* Build configuration list for PBXNativeTarget "Health SocialTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +440,7 @@
 				AEDCDAF11AA8E17800F35E0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
