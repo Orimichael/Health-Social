@@ -14,6 +14,7 @@ class Person: NSObject {
     var firstName: String?
     var lastName: String?
     var userName: String?
+    var userID: Int?
     var password: String?
     var photo: UIImage?
     var fitnessGoals: NSArray?
@@ -35,6 +36,7 @@ class Person: NSObject {
     init(firstName: String? = nil,
         lastName: String? = nil,
         userName: String? = nil,
+        userID: Int? = nil,
         password: String? = nil,
         photo: UIImage? = nil,
         fitnessGoals: NSArray? = nil,
@@ -54,6 +56,7 @@ class Person: NSObject {
             self.firstName = firstName
             self.lastName = lastName
             self.userName = userName
+            self.userID = userID
             self.password = password
             self.photo = photo
             self.fitnessGoals = fitnessGoals

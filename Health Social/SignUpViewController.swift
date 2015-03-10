@@ -54,15 +54,17 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             self.dismissViewControllerAnimated(true, completion: nil)
         }
         
+        var newUser = Person()
+        newUser.userName = username
+        newUser.password = password
+        newUser.userID = Int(arc4random() % 10000)
+        userList.append(newUser)
+        println(userList.count)
+        
         myAlert.addAction(okAction)
         self.presentViewController(myAlert, animated: true, completion: nil)
         
-        var newUser = Person()
-        identity++
-        newUser.userName = username
-        newUser.password = password
-        userList.append(newUser)
-        println(userList)
+
         
     }
     
