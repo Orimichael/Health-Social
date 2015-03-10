@@ -32,6 +32,7 @@ class Person: NSObject {
     var diet: String?
     var healthPoints: Int?
     var isLoggedIn: Bool?
+    var isTrialMember: Bool?
     
     init(firstName: String? = nil,
         lastName: String? = nil,
@@ -46,6 +47,7 @@ class Person: NSObject {
         weight: Int? = nil, // pounds or kg
         age: Int? = nil,  // years
         birthdate: NSDate? = nil,
+        isTrialMember: Bool? = nil,
         personalSettings: NSUserDefaults? = nil,
         // var classes: Lessons
         // var friends: [Person()]
@@ -59,6 +61,7 @@ class Person: NSObject {
             self.userID = userID
             self.password = password
             self.photo = photo
+            self.isTrialMember = isTrialMember
             self.fitnessGoals = fitnessGoals
             self.height = height
             self.weight = weight
