@@ -5,10 +5,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--First-->
+        <!--New User Information-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="NewUserTabBarController" customModule="Health_Social" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" userLabel="New User Information" customClass="NewUserTabBarController" customModule="Health_Social" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -131,14 +131,14 @@
                                 <color key="textColor" red="0.89351482780000002" green="0.15857529079999999" blue="0.25806443829999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daW-2P-0i7">
-                                <rect key="frame" x="16" y="34" width="41" height="30"/>
-                                <state key="normal" title="Home">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daW-2P-0i7">
+                                <rect key="frame" x="16" y="34" width="27" height="26"/>
+                                <state key="normal" image="glyphicons-21-home">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Irk-lY-Cyu" kind="presentation" id="Lnb-Pu-rJj"/>
+                                    <segue destination="Irk-lY-Cyu" kind="presentation" identifier="goToHomeView" id="Lnb-Pu-rJj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="khu-tu-YXZ">
@@ -218,19 +218,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="542" y="-1788"/>
-        </scene>
-        <!--Second-->
-        <scene sceneID="wg7-f3-ORb">
-            <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="Health_Social" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
-                    <toolbarItems/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="542" y="-1032"/>
+            <point key="canvasLocation" x="-1326" y="-668"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1DI-W0-APg">
@@ -276,7 +264,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="MBY-Ap-9DN" kind="show" id="X7R-Jg-SZI"/>
+                                    <segue destination="MBY-Ap-9DN" kind="show" identifier="goToHealthInfo" id="X7R-Jg-SZI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4z-Ix-DpO">
@@ -285,7 +273,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="fb8-jp-irF" kind="show" id="3rc-m8-CDp"/>
+                                    <segue destination="fb8-jp-irF" kind="show" identifier="goToSettings" id="3rc-m8-CDp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vCY-ge-k27">
@@ -294,7 +282,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Z5h-r6-cLO" kind="show" id="C8Q-G4-12W"/>
+                                    <segue destination="Z5h-r6-cLO" kind="show" identifier="goToAboutApp" id="C8Q-G4-12W"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGL-bF-Xiq">
@@ -312,7 +300,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uog-j6-N9I">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current User" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uog-j6-N9I">
                                 <rect key="frame" x="236" y="146" width="119" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -329,13 +317,11 @@
                             <state key="normal" title="Tab View">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
-                            <connections>
-                                <segue destination="49e-Tb-3d3" kind="show" id="gWB-q0-yDF"/>
-                            </connections>
                         </button>
                     </navigationItem>
                     <connections>
                         <outlet property="logInButton" destination="8tV-Vm-99F" id="P1j-4R-6nt"/>
+                        <outlet property="logOutButton" destination="JGL-bF-Xiq" id="urY-MT-sEF"/>
                         <outlet property="userNameLabel" destination="Uog-j6-N9I" id="pue-lB-gIP"/>
                     </connections>
                 </viewController>
@@ -354,12 +340,20 @@
                     <view key="view" contentMode="scaleToFill" id="osp-eX-tob">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Health Info Articles - RSS Feeds" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adZ-0Q-r8W">
+                                <rect key="frame" x="203" y="259" width="195" height="81"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qOA-kh-mOG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1418" y="544"/>
+            <point key="canvasLocation" x="-1326" y="1177"/>
         </scene>
         <!--About App-->
         <scene sceneID="CzW-qR-Jl2">
@@ -372,12 +366,20 @@
                     <view key="view" contentMode="scaleToFill" id="JGv-j4-pbE">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xII-IH-Su4">
+                                <rect key="frame" x="240" y="274" width="121" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hzm-Aw-BsT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1418" y="-262"/>
+            <point key="canvasLocation" x="-1326" y="80"/>
         </scene>
         <!--New User-->
         <scene sceneID="Zoh-fw-Nv3">
@@ -473,7 +475,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KfZ-Le-0I0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2128" y="-2021"/>
+            <point key="canvasLocation" x="-2104" y="-1425"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="CMk-Bh-TUf">
@@ -560,69 +562,12 @@
                         <outlet property="loginLabel" destination="qIJ-0V-pKr" id="Td3-Wg-fYL"/>
                         <outlet property="passwordText" destination="e9e-SW-Tdp" id="7Mc-tN-fYJ"/>
                         <outlet property="userNameText" destination="Ipd-SI-aoE" id="Gyq-YK-Bc5"/>
-                        <segue destination="49e-Tb-3d3" kind="presentation" identifier="goToLoggedIn" id="RPW-NF-POc"/>
+                        <segue destination="9pv-A4-QxB" kind="presentation" identifier="goToLoggedIn" id="Qqu-7B-pAH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Tq-ji-YsW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2128" y="-1136"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="yl2-sM-qoP">
-            <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
-                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="UXa-b6-Nli" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="r6G-zz-9x4" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1418" y="-1136"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="4p4-Wr-IHV">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="UXa-b6-Nli" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="s4G-Af-miZ"/>
-                    <toolbarItems/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="Sc3-vv-sWo">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="VQ8-f9-gR4"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wqU-wU-OgB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-494" y="-1788"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="8bW-47-fse">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="r6G-zz-9x4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="2c2-C6-WqH"/>
-                    <toolbarItems/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="B9v-Tg-pjm">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="MPd-E7-N07"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fKX-2S-BT9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-494" y="-1032"/>
+            <point key="canvasLocation" x="-2104" y="-668"/>
         </scene>
         <!--Settings Table View Controller-->
         <scene sceneID="Sfr-sW-NqM">
@@ -795,7 +740,7 @@
                     </state>
                 </button>
             </objects>
-            <point key="canvasLocation" x="-1418" y="1337"/>
+            <point key="canvasLocation" x="-2104" y="1177"/>
         </scene>
     </scenes>
     <resources>
@@ -803,14 +748,13 @@
         <image name="glyphicons-10-magic" width="24" height="24"/>
         <image name="glyphicons-12-camera" width="26" height="20"/>
         <image name="glyphicons-13-heart" width="24" height="22"/>
+        <image name="glyphicons-21-home" width="27" height="26"/>
         <image name="glyphicons-33-wifi-alt" width="26" height="26"/>
         <image name="glyphicons-4-user" width="23" height="22"/>
         <image name="glyphicons-61-compass" width="24" height="24"/>
         <image name="glyphicons-74-wifi" width="31" height="23"/>
-        <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RPW-NF-POc"/>
         <segue reference="Lnb-Pu-rJj"/>
     </inferredMetricsTieBreakers>
 </document>

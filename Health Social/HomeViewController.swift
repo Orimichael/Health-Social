@@ -17,6 +17,8 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var logInButton: UIButton!
     
+    @IBOutlet weak var logOutButton: UIButton!
+    
     @IBAction func logInTapped(sender: UIButton) {
         
         
@@ -24,7 +26,9 @@ class HomeViewController: UIViewController {
     @IBAction func logOutTapped(sender: UIButton) {
         NSUserDefaults.standardUserDefaults().setBool(false, forKey: "isUserLoggedIn")
         NSUserDefaults.standardUserDefaults().synchronize()
-        self.performSegueWithIdentifier("goToLogIn", sender: self)
+        logInButton.userInteractionEnabled = true
+        logOutButton.userInteractionEnabled = false
+       // self.performSegueWithIdentifier("goToLogIn", sender: self)
     }
     
     override func viewDidLoad() {
@@ -44,6 +48,8 @@ class HomeViewController: UIViewController {
         let isUserLoggedIn = NSUserDefaults.standardUserDefaults().boolForKey("isUserLoggedIn")
         if isUserLoggedIn {
             logInButton.userInteractionEnabled = false
+            logOutButton.userInteractionEnabled = true
+        //    userNameLabel.text = currentUser
         }
         
         activityIndicatorView.removeFromSuperview()

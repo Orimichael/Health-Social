@@ -57,7 +57,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         var newUser = Person()
         newUser.userName = username
         newUser.password = password
-        newUser.userID = Int(arc4random() % 10000)
+        var uuid = NSUUID().UUIDString
+        println(uuid)
+        newUser.userID = uuid
         userList.append(newUser)
         println(userList.count)
         
@@ -77,9 +79,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         self.presentViewController(myAlert, animated: true, completion: nil)
     }
     
-    @IBAction func logInButton(sender: UIButton) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
+//    @IBAction func logInButton(sender: UIButton) {
+//        self.dismissViewControllerAnimated(true, completion: nil)
+//    }
     
 }

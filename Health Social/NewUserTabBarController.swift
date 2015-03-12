@@ -9,7 +9,7 @@
 import UIKit
 
 
-class NewUserTabBarController: UITabBarController {
+class NewUserTabBarController: UIViewController {
     
     
     @IBOutlet weak var firstNameText: UITextField!

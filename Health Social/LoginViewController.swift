@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 OriGen Health. All rights reserved.
 //
 
-import Foundation
 
 import UIKit
 

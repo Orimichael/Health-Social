@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 OriGen Health. All rights reserved.
 //
 
-// import Foundation
+
 import UIKit
 
 class Person: NSObject {
@@ -14,7 +14,7 @@ class Person: NSObject {
     var firstName: String?
     var lastName: String?
     var userName: String?
-    var userID: Int?
+    var userID: String?
     var password: String?
     var photo: UIImage?
     var fitnessGoals: NSArray?
@@ -37,7 +37,7 @@ class Person: NSObject {
     init(firstName: String? = nil,
         lastName: String? = nil,
         userName: String? = nil,
-        userID: Int? = nil,
+        userID: String? = nil,
         password: String? = nil,
         photo: UIImage? = nil,
         fitnessGoals: NSArray? = nil,
