@@ -34,6 +34,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
+        // Alternatively, might check for error, if error != nil, print NSError.desscription
+        
         // Check if passwords match
         if (password != confirmPassword){
             // Display an alert message

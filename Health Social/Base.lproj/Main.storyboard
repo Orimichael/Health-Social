@@ -225,10 +225,45 @@
             </objects>
             <point key="canvasLocation" x="-1326" y="-668"/>
         </scene>
-        <!--View Controller-->
+        <!--Debug View Controller-->
+        <scene sceneID="hVt-3X-BCQ">
+            <objects>
+                <viewController id="Flf-Ob-U4b" customClass="DebugViewController" customModule="Health_Social" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FsJ-K5-Iyh"/>
+                        <viewControllerLayoutGuide type="bottom" id="65h-Ed-dTT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rM1-8v-HaG">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hx7-XY-fR5">
+                                <rect key="frame" x="238" y="117" width="176" height="93"/>
+                                <state key="normal" title="Make New User">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9L2-YQ-flc">
+                                <rect key="frame" x="257" y="282" width="123" height="79"/>
+                                <state key="normal" title="Dismiss">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismiss:" destination="Flf-Ob-U4b" eventType="touchUpInside" id="8eb-CB-MPp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uus-5B-YVF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3572" y="-1433"/>
+        </scene>
+        <!--Parse Log In View Controller-->
         <scene sceneID="ANH-f8-Lk4">
             <objects>
-                <viewController id="i7h-ox-In0" sceneMemberID="viewController">
+                <viewController id="i7h-ox-In0" customClass="ParseLogInViewController" customModule="Health_Social" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7ly-Nd-MR0"/>
                         <viewControllerLayoutGuide type="bottom" id="4IO-LU-4DY"/>
@@ -271,7 +306,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tV-Vm-99F">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tV-Vm-99F">
                                 <rect key="frame" x="16" y="187" width="172" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="172" id="dNs-XX-ktD"/>
@@ -333,7 +368,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uL-Ou-WDk">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uL-Ou-WDk">
                                 <rect key="frame" x="80" y="83" width="45" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="es3-3T-dsJ"/>
@@ -345,6 +380,17 @@
                                 <connections>
                                     <action selector="parseTapped:" destination="Irk-lY-Cyu" eventType="touchUpInside" id="P4w-PW-Snh"/>
                                     <segue destination="i7h-ox-In0" kind="presentation" identifier="goToParse" id="5tf-Ij-VeR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eE2-5l-vWe">
+                                <rect key="frame" x="229" y="207" width="132" height="84"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Debug">
+                                    <color key="titleColor" red="0.89351482780000002" green="0.15857529079999999" blue="0.25806443829999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Flf-Ob-U4b" kind="presentation" identifier="goToDebug" id="6ti-qS-2KI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -420,6 +466,10 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ENJ-kY-S3D">
+                                <rect key="frame" x="160" y="99" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -802,6 +852,6 @@
         <image name="glyphicons-74-wifi" width="31" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Lnb-Pu-rJj"/>
+        <segue reference="h60-b0-boE"/>
     </inferredMetricsTieBreakers>
 </document>

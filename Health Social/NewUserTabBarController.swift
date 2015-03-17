@@ -32,7 +32,7 @@ class NewUserTabBarController: UIViewController {
     
     
     @IBAction func saveButtonTapped(sender: UIButton) {
-        
+        Person.currentUser().email = emailText.text
         
     }
     

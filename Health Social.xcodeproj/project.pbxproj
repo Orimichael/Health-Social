@@ -30,25 +30,15 @@
 		AECA806C1AB7780A00074BE9 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECA806B1AB7780A00074BE9 /* Social.framework */; };
 		AECA806E1AB7781900074BE9 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECA806D1AB7781900074BE9 /* Accounts.framework */; };
 		AECA80711AB77F4F00074BE9 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECA80701AB77F4F00074BE9 /* Parse.framework */; };
+		AECA80741AB8EE8500074BE9 /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECA80731AB8EE8400074BE9 /* DebugViewController.swift */; };
 		AEDCDAD11AA8E17800F35E0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDCDAD01AA8E17800F35E0B /* AppDelegate.swift */; };
 		AEDCDAD81AA8E17800F35E0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEDCDAD61AA8E17800F35E0B /* Main.storyboard */; };
 		AEDCDADA1AA8E17800F35E0B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEDCDAD91AA8E17800F35E0B /* Images.xcassets */; };
 		AEDCDADD1AA8E17800F35E0B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEDCDADB1AA8E17800F35E0B /* LaunchScreen.xib */; };
-		AEDCDAE91AA8E17800F35E0B /* Health_SocialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDCDAE81AA8E17800F35E0B /* Health_SocialTests.swift */; };
 		AEDCDAF31AA8E93700F35E0B /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDCDAF21AA8E93700F35E0B /* SettingsTableViewController.swift */; };
 		AEDCDAF51AAE073100F35E0B /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDCDAF41AAE073100F35E0B /* Person.swift */; };
 		AEDCDAF71AAE0D4200F35E0B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDCDAF61AAE0D4200F35E0B /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		AEDCDAE31AA8E17800F35E0B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AEDCDAC31AA8E17700F35E0B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AEDCDACA1AA8E17800F35E0B;
-			remoteInfo = "Health Social";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		AE3D9F2A1AAE6FF100A43370 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -75,15 +65,13 @@
 		AECA806B1AB7780A00074BE9 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		AECA806D1AB7781900074BE9 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		AECA80701AB77F4F00074BE9 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		AECA80731AB8EE8400074BE9 /* DebugViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
 		AEDCDACB1AA8E17800F35E0B /* Health Social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Health Social.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEDCDACF1AA8E17800F35E0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEDCDAD01AA8E17800F35E0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEDCDAD71AA8E17800F35E0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AEDCDAD91AA8E17800F35E0B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AEDCDADC1AA8E17800F35E0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		AEDCDAE21AA8E17800F35E0B /* Health SocialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Health SocialTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AEDCDAE71AA8E17800F35E0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AEDCDAE81AA8E17800F35E0B /* Health_SocialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Health_SocialTests.swift; sourceTree = "<group>"; };
 		AEDCDAF21AA8E93700F35E0B /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		AEDCDAF41AAE073100F35E0B /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		AEDCDAF61AAE0D4200F35E0B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -116,17 +104,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AEDCDADF1AA8E17800F35E0B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AEDCDAC21AA8E17700F35E0B = {
+		AECA80721AB8DE3500074BE9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				AECA80701AB77F4F00074BE9 /* Parse.framework */,
@@ -148,8 +129,15 @@
 				AECA78491AB204F600074BE9 /* StoreKit.framework */,
 				AECA784A1AB204F600074BE9 /* SystemConfiguration.framework */,
 				AECA783E1AB2041800074BE9 /* Bolts.framework */,
+			);
+			name = Frameworks;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		AEDCDAC21AA8E17700F35E0B = {
+			isa = PBXGroup;
+			children = (
 				AEDCDACD1AA8E17800F35E0B /* Health Social */,
-				AEDCDAE51AA8E17800F35E0B /* Health SocialTests */,
 				AEDCDACC1AA8E17800F35E0B /* Products */,
 				AECA78691AB2151B00074BE9 /* Health Social-Bridging-Header.h */,
 			);
@@ -159,7 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				AEDCDACB1AA8E17800F35E0B /* Health Social.app */,
-				AEDCDAE21AA8E17800F35E0B /* Health SocialTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -169,6 +156,7 @@
 			children = (
 				AEDCDAD01AA8E17800F35E0B /* AppDelegate.swift */,
 				AEDCDAD61AA8E17800F35E0B /* Main.storyboard */,
+				AECA80731AB8EE8400074BE9 /* DebugViewController.swift */,
 				AECA786C1AB3782D00074BE9 /* ParseLogInViewController.swift */,
 				AECA783A1AAF743A00074BE9 /* NewUserTabBarController.swift */,
 				AE3D9F2C1AAE7BF300A43370 /* SignUpViewController.swift */,
@@ -186,24 +174,8 @@
 		AEDCDACE1AA8E17800F35E0B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AECA80721AB8DE3500074BE9 /* Frameworks */,
 				AEDCDACF1AA8E17800F35E0B /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		AEDCDAE51AA8E17800F35E0B /* Health SocialTests */ = {
-			isa = PBXGroup;
-			children = (
-				AEDCDAE81AA8E17800F35E0B /* Health_SocialTests.swift */,
-				AEDCDAE61AA8E17800F35E0B /* Supporting Files */,
-			);
-			path = "Health SocialTests";
-			sourceTree = "<group>";
-		};
-		AEDCDAE61AA8E17800F35E0B /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				AEDCDAE71AA8E17800F35E0B /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -228,24 +200,6 @@
 			productReference = AEDCDACB1AA8E17800F35E0B /* Health Social.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AEDCDAE11AA8E17800F35E0B /* Health SocialTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AEDCDAEF1AA8E17800F35E0B /* Build configuration list for PBXNativeTarget "Health SocialTests" */;
-			buildPhases = (
-				AEDCDADE1AA8E17800F35E0B /* Sources */,
-				AEDCDADF1AA8E17800F35E0B /* Frameworks */,
-				AEDCDAE01AA8E17800F35E0B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AEDCDAE41AA8E17800F35E0B /* PBXTargetDependency */,
-			);
-			name = "Health SocialTests";
-			productName = "Health SocialTests";
-			productReference = AEDCDAE21AA8E17800F35E0B /* Health SocialTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -257,10 +211,6 @@
 				TargetAttributes = {
 					AEDCDACA1AA8E17800F35E0B = {
 						CreatedOnToolsVersion = 6.1.1;
-					};
-					AEDCDAE11AA8E17800F35E0B = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = AEDCDACA1AA8E17800F35E0B;
 					};
 				};
 			};
@@ -279,7 +229,6 @@
 			projectRoot = "";
 			targets = (
 				AEDCDACA1AA8E17800F35E0B /* Health Social */,
-				AEDCDAE11AA8E17800F35E0B /* Health SocialTests */,
 			);
 		};
 /* End PBXProject section */
@@ -295,13 +244,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AEDCDAE01AA8E17800F35E0B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -309,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AECA80741AB8EE8500074BE9 /* DebugViewController.swift in Sources */,
 				AEDCDAF71AAE0D4200F35E0B /* LoginViewController.swift in Sources */,
 				AEDCDAF51AAE073100F35E0B /* Person.swift in Sources */,
 				AE3D9F2D1AAE7BF300A43370 /* SignUpViewController.swift in Sources */,
@@ -320,23 +263,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AEDCDADE1AA8E17800F35E0B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AEDCDAE91AA8E17800F35E0B /* Health_SocialTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		AEDCDAE41AA8E17800F35E0B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AEDCDACA1AA8E17800F35E0B /* Health Social */;
-			targetProxy = AEDCDAE31AA8E17800F35E0B /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AEDCDAD61AA8E17800F35E0B /* Main.storyboard */ = {
@@ -445,7 +372,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(INHERITED)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Health Social/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				"LIBRARY_SEARCH_PATHS[arch=*]" = "";
@@ -469,42 +399,6 @@
 			};
 			name = Release;
 		};
-		AEDCDAF01AA8E17800F35E0B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Health SocialTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Health Social.app/Health Social";
-			};
-			name = Debug;
-		};
-		AEDCDAF11AA8E17800F35E0B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				INFOPLIST_FILE = "Health SocialTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Health Social.app/Health Social";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -522,15 +416,6 @@
 			buildConfigurations = (
 				AEDCDAED1AA8E17800F35E0B /* Debug */,
 				AEDCDAEE1AA8E17800F35E0B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AEDCDAEF1AA8E17800F35E0B /* Build configuration list for PBXNativeTarget "Health SocialTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AEDCDAF01AA8E17800F35E0B /* Debug */,
-				AEDCDAF11AA8E17800F35E0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

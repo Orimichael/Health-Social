@@ -9,30 +9,29 @@
 
 import UIKit
 
-class Person: NSObject {
-    
-    var firstName: String?
-    var lastName: String?
-    var userName: String?
-    var userID: String?
-    var password: String?
-    var photo: UIImage?
-    var fitnessGoals: NSArray?
+class Person: PFUser {
+    // @NSManaged allows Parse to managed thes variables
+    @NSManaged var firstName: String?
+    @NSManaged var lastName: String?
+    @NSManaged var userName: String?
+    @NSManaged var userID: String?
+    @NSManaged var photo: UIImage?
+    @NSManaged var fitnessGoals: NSArray? //Will consider using Parse Relationship object... relation is a pointer
     // var fitnessCenter: SportsCenter
-    var height: Int? // inches or cm
-    var weight: Int? // pounds or kg
-    var age: Int? // years
-    var birthdate: NSDate?
+    @NSManaged var height: NSNumber? // inches or cm //NSNumber for Int or Bool
+    @NSManaged var weight: NSNumber? // pounds or kg
+    @NSManaged var age: NSNumber? // years
+    @NSManaged var birthdate: NSDate?
     var personalSettings: NSUserDefaults?
-    var numberOfLogins: Int?
+    @NSManaged var numberOfLogins: NSNumber?
     // var classes: Lessons
     // var friends: [Person()]
     // var relatives: [Person()]
     // var favoriteExercises: Exercise
-    var diet: String?
-    var healthPoints: Int?
-    var isLoggedIn: Bool?
-    var isTrialMember: Bool?
+    @NSManaged var diet: String?
+    @NSManaged var healthPoints: NSNumber?
+    @NSManaged var isLoggedIn: NSNumber?
+    @NSManaged var isTrialMember: NSNumber?
     
     init(firstName: String? = nil,
         lastName: String? = nil,
@@ -55,6 +54,7 @@ class Person: NSObject {
         // var favoriteExercises: Exercise
         diet: String? = nil,
         healthPoints: Int? = nil, isLoggedIn: Bool? = false) {
+            super.init()
             self.firstName = firstName
             self.lastName = lastName
             self.userName = userName
@@ -72,6 +72,14 @@ class Person: NSObject {
             self.healthPoints = healthPoints
             self.isLoggedIn = isLoggedIn
             self.numberOfLogins = numberOfLogins
+    }
+    
+    override class func parseClassName () -> String {
+        return "User"
+    }
+    
+    override class func currentUser() -> Person {
+        return PFUser.currentUser() as Person
     }
     
 }

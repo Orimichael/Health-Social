@@ -14,6 +14,15 @@ class ParseLogInViewController: UIViewController, PFLogInViewControllerDelegate,
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+            
+
+    }
+    
+
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         if(PFUser.currentUser() == nil){
             var logInViewController = PFLogInViewController()
             logInViewController.delegate = self
@@ -30,9 +39,16 @@ class ParseLogInViewController: UIViewController, PFLogInViewControllerDelegate,
             //add signUpViewController instance to logInViewController for signUp module.
             logInViewController.signUpController = signUpViewController
             self.presentViewController(logInViewController, animated: true, completion: nil)
-            
         }
+//          If I was MANUALLY creating a loginView I would need following to check for errors:
+//        Person.logInWithUsernameInBackground(username: String!, password: String!) { (user, error) -> Void in
+//             if error != nil {
+//                don't log in}
+//            else {
+//            go to New User Details view
+//        }    
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -41,8 +57,18 @@ class ParseLogInViewController: UIViewController, PFLogInViewControllerDelegate,
     
 
     /*
-    // MARK: - Navigation
-
+    // TODO: - Delegate Methods 
+    Add my delegate methods here
+    */
+    
+    func logInViewController(logInController: PFLogInViewController!, didLogInUser user: PFUser!) {
+    self.dismissViewControllerAnimated(true, completion: { () -> Void in
+     // Enter the Perform Segue code here
+        // Segue to New User information if firstname, email, etc. has not been recorded/is nil (or make it a boolean flag, etc.
+    })
+    }
+    
+/*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
