@@ -79,8 +79,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         self.presentViewController(myAlert, animated: true, completion: nil)
     }
     
-//    @IBAction func logInButton(sender: UIButton) {
-//        self.dismissViewControllerAnimated(true, completion: nil)
-//    }
+    @IBAction func logInButton(sender: UIButton) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
 }

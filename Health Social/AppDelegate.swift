@@ -23,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         object.addObject("Five", forKey: "websiteRating")
         object.save()
         
+//        PFFacebookUtils.initializeFacebook()
+        
         // Override point for customization after application launch.
         return true
     }

@@ -3,3 +3,12 @@
 //
 
 #import <Parse/Parse.h>
+
+#import <ParseUI/ParseUI.h>
+
+#import <ParseFacebookUtils/PFFacebookutils.h>
+
+#import <FacebookSDK/FacebookSDK.h>
+
+
+

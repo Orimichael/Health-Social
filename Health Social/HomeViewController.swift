@@ -19,6 +19,10 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var logOutButton: UIButton!
     
+    @IBAction func parseTapped(sender: UIButton) {
+        performSegueWithIdentifier("goToParse", sender: self)
+        
+    }
     @IBAction func logInTapped(sender: UIButton) {
         
         
@@ -28,6 +32,7 @@ class HomeViewController: UIViewController {
         NSUserDefaults.standardUserDefaults().synchronize()
         logInButton.userInteractionEnabled = true
         logOutButton.userInteractionEnabled = false
+        userNameLabel.text = ""
        // self.performSegueWithIdentifier("goToLogIn", sender: self)
     }
     
@@ -49,7 +54,9 @@ class HomeViewController: UIViewController {
         if isUserLoggedIn {
             logInButton.userInteractionEnabled = false
             logOutButton.userInteractionEnabled = true
-        //    userNameLabel.text = currentUser
+            userNameLabel.text = NSUserDefaults.standardUserDefaults().stringForKey("username")
+        } else {
+            userNameLabel.text = ""
         }
         
         activityIndicatorView.removeFromSuperview()
