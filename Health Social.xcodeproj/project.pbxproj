@@ -38,6 +38,10 @@
 		AEDCDAF31AA8E93700F35E0B /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDCDAF21AA8E93700F35E0B /* SettingsTableViewController.swift */; };
 		AEDCDAF51AAE073100F35E0B /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDCDAF41AAE073100F35E0B /* Person.swift */; };
 		AEDCDAF71AAE0D4200F35E0B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDCDAF61AAE0D4200F35E0B /* LoginViewController.swift */; };
+		AEF2229B1AC1E26900B93F43 /* BarCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF2229A1AC1E26900B93F43 /* BarCodeViewController.swift */; };
+		AEF2229F1AC4980900B93F43 /* PeerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF2229C1AC4980900B93F43 /* PeerListViewController.swift */; };
+		AEF222A01AC4980900B93F43 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF2229D1AC4980900B93F43 /* ChatViewController.swift */; };
+		AEF222A11AC4980900B93F43 /* MPCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF2229E1AC4980900B93F43 /* MPCManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +79,10 @@
 		AEDCDAF21AA8E93700F35E0B /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		AEDCDAF41AAE073100F35E0B /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		AEDCDAF61AAE0D4200F35E0B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AEF2229A1AC1E26900B93F43 /* BarCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarCodeViewController.swift; sourceTree = "<group>"; };
+		AEF2229C1AC4980900B93F43 /* PeerListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeerListViewController.swift; sourceTree = "<group>"; };
+		AEF2229D1AC4980900B93F43 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		AEF2229E1AC4980900B93F43 /* MPCManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPCManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,19 +162,23 @@
 		AEDCDACD1AA8E17800F35E0B /* Health Social */ = {
 			isa = PBXGroup;
 			children = (
+				AEF2229C1AC4980900B93F43 /* PeerListViewController.swift */,
+				AEF2229D1AC4980900B93F43 /* ChatViewController.swift */,
+				AEF2229E1AC4980900B93F43 /* MPCManager.swift */,
+				AEF2229A1AC1E26900B93F43 /* BarCodeViewController.swift */,
 				AEDCDAD01AA8E17800F35E0B /* AppDelegate.swift */,
 				AEDCDAD61AA8E17800F35E0B /* Main.storyboard */,
 				AECA80731AB8EE8400074BE9 /* DebugViewController.swift */,
 				AECA786C1AB3782D00074BE9 /* ParseLogInViewController.swift */,
 				AECA783A1AAF743A00074BE9 /* NewUserTabBarController.swift */,
-				AE3D9F2C1AAE7BF300A43370 /* SignUpViewController.swift */,
 				AE3D9F2A1AAE6FF100A43370 /* HomeViewController.swift */,
-				AEDCDAF61AAE0D4200F35E0B /* LoginViewController.swift */,
 				AEDCDAF41AAE073100F35E0B /* Person.swift */,
 				AEDCDAF21AA8E93700F35E0B /* SettingsTableViewController.swift */,
 				AEDCDAD91AA8E17800F35E0B /* Images.xcassets */,
 				AEDCDADB1AA8E17800F35E0B /* LaunchScreen.xib */,
 				AEDCDACE1AA8E17800F35E0B /* Supporting Files */,
+				AEDCDAF61AAE0D4200F35E0B /* LoginViewController.swift */,
+				AE3D9F2C1AAE7BF300A43370 /* SignUpViewController.swift */,
 			);
 			path = "Health Social";
 			sourceTree = "<group>";
@@ -251,14 +263,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEF2229B1AC1E26900B93F43 /* BarCodeViewController.swift in Sources */,
 				AECA80741AB8EE8500074BE9 /* DebugViewController.swift in Sources */,
 				AEDCDAF71AAE0D4200F35E0B /* LoginViewController.swift in Sources */,
 				AEDCDAF51AAE073100F35E0B /* Person.swift in Sources */,
+				AEF2229F1AC4980900B93F43 /* PeerListViewController.swift in Sources */,
+				AEF222A11AC4980900B93F43 /* MPCManager.swift in Sources */,
 				AE3D9F2D1AAE7BF300A43370 /* SignUpViewController.swift in Sources */,
 				AEDCDAF31AA8E93700F35E0B /* SettingsTableViewController.swift in Sources */,
 				AECA786D1AB3782D00074BE9 /* ParseLogInViewController.swift in Sources */,
 				AECA783B1AAF743A00074BE9 /* NewUserTabBarController.swift in Sources */,
 				AEDCDAD11AA8E17800F35E0B /* AppDelegate.swift in Sources */,
+				AEF222A01AC4980900B93F43 /* ChatViewController.swift in Sources */,
 				AE3D9F2B1AAE6FF100A43370 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

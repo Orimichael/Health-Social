@@ -13,6 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var mpcManager: MPCManager!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
@@ -23,9 +24,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         object.addObject("Five", forKey: "websiteRating")
         object.save()
         
-//        PFFacebookUtils.initializeFacebook()
+   //     PFFacebookUtils.initializeFacebook()
         
         // Override point for customization after application launch.
+        
+        
+        mpcManager = MPCManager()
+        
         return true
     }
 

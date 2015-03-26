@@ -14,25 +14,35 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var userNameLabel: UILabel!
     
-    
-    @IBOutlet weak var logInButton: UIButton!
+    @IBOutlet weak var parseButton: UIButton!
     
     @IBOutlet weak var logOutButton: UIButton!
     
     @IBAction func parseTapped(sender: UIButton) {
+        var currentUser = PFUser.currentUser()
+        if currentUser != nil {
+            println(currentUser)
+            parseButton.userInteractionEnabled = false
+        } else {
         performSegueWithIdentifier("goToParse", sender: self)
-        
+        }
     }
-    @IBAction func logInTapped(sender: UIButton) {
-        
-        
-    }
+
     @IBAction func logOutTapped(sender: UIButton) {
         NSUserDefaults.standardUserDefaults().setBool(false, forKey: "isUserLoggedIn")
         NSUserDefaults.standardUserDefaults().synchronize()
-        logInButton.userInteractionEnabled = true
         logOutButton.userInteractionEnabled = false
+        parseButton.userInteractionEnabled = true
         userNameLabel.text = ""
+        var current = Person.currentUser()
+        if current != nil {
+        var loggedStatus = current.isLoggedIn
+        println(loggedStatus)
+        current.isLoggedIn = false
+        current.save()
+        Person.logOut()
+        println(current)
+        }
        // self.performSegueWithIdentifier("goToLogIn", sender: self)
     }
     
@@ -48,13 +58,20 @@ class HomeViewController: UIViewController {
         activityIndicatorView.center = view.center
         //tell the Activity Indicator View to begin animating
         activityIndicatorView.startAnimating()
-
+        
+        Parse.setApplicationId("ShPIp8XrYII5GG5hsqQBKDpIXdTqyyy1YFz3nx98", clientKey:"TOVT0AifDifBx9u0nCKDefIYmRa6GVdP3MvEWOyT")
+        
+        var object = PFObject(className: "testDataClass")
+        object.addObject("iOSBlog", forKey: "websiteUrl")
+        object.addObject("Five", forKey: "websiteRating")
+        object.save()
+        
       //  view.backgroundColor = UIColor.brownColor()
         let isUserLoggedIn = NSUserDefaults.standardUserDefaults().boolForKey("isUserLoggedIn")
         if isUserLoggedIn {
-            logInButton.userInteractionEnabled = false
             logOutButton.userInteractionEnabled = true
-            userNameLabel.text = NSUserDefaults.standardUserDefaults().stringForKey("username")
+            parseButton.userInteractionEnabled = false
+            userNameLabel.text = Person.currentUser().userName
         } else {
             userNameLabel.text = ""
         }
