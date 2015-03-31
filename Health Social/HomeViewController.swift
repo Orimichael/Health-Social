@@ -71,7 +71,7 @@ class HomeViewController: UIViewController {
         if isUserLoggedIn {
             logOutButton.userInteractionEnabled = true
             parseButton.userInteractionEnabled = false
-            userNameLabel.text = Person.currentUser().userName
+            userNameLabel.text = Person.currentUser().username
         } else {
             userNameLabel.text = ""
         }

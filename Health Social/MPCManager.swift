@@ -36,18 +36,16 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     
     var invitationHandler: ((Bool, MCSession!)->Void)!
     
-    var current: Person!
-    
     
     override init() {
         super.init()
         
-        current = Person.currentUser()
-        
-        peer = MCPeerID(displayName: UIDevice.currentDevice().name)
-        
-        if current != nil {
-            peer = MCPeerID(displayName: current.userName)
+        if let current = Person.currentUser() {
+            println("\(current.username)")
+            
+            peer = MCPeerID(displayName: current.username!)
+        } else {
+            peer = MCPeerID(displayName: UIDevice.currentDevice().name)
         }
 
         session = MCSession(peer: peer)

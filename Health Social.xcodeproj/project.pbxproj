@@ -32,7 +32,6 @@
 		AECA80711AB77F4F00074BE9 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECA80701AB77F4F00074BE9 /* Parse.framework */; };
 		AECA80741AB8EE8500074BE9 /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECA80731AB8EE8400074BE9 /* DebugViewController.swift */; };
 		AEDCDAD11AA8E17800F35E0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDCDAD01AA8E17800F35E0B /* AppDelegate.swift */; };
-		AEDCDAD81AA8E17800F35E0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEDCDAD61AA8E17800F35E0B /* Main.storyboard */; };
 		AEDCDADA1AA8E17800F35E0B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEDCDAD91AA8E17800F35E0B /* Images.xcassets */; };
 		AEDCDADD1AA8E17800F35E0B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEDCDADB1AA8E17800F35E0B /* LaunchScreen.xib */; };
 		AEDCDAF31AA8E93700F35E0B /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDCDAF21AA8E93700F35E0B /* SettingsTableViewController.swift */; };
@@ -42,6 +41,13 @@
 		AEF2229F1AC4980900B93F43 /* PeerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF2229C1AC4980900B93F43 /* PeerListViewController.swift */; };
 		AEF222A01AC4980900B93F43 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF2229D1AC4980900B93F43 /* ChatViewController.swift */; };
 		AEF222A11AC4980900B93F43 /* MPCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF2229E1AC4980900B93F43 /* MPCManager.swift */; };
+		AEF222A31AC9C06800B93F43 /* MessageBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF222A21AC9C06800B93F43 /* MessageBoard.swift */; };
+		AEF222A51AC9C54600B93F43 /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF222A41AC9C54600B93F43 /* Thread.swift */; };
+		AEF222A71AC9C5A700B93F43 /* SportsCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF222A61AC9C5A700B93F43 /* SportsCenter.swift */; };
+		AEF222A91AC9CAB900B93F43 /* ThreadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF222A81AC9CAB900B93F43 /* ThreadsViewController.swift */; };
+		AEF222AB1AC9D49700B93F43 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF222AA1AC9D49700B93F43 /* Post.swift */; };
+		AEF222AD1AC9EBC700B93F43 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF222AC1AC9EBC700B93F43 /* PostsViewController.swift */; };
+		AEF222B01AC9FF6300B93F43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEF222AE1AC9FF6300B93F43 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,7 +79,6 @@
 		AEDCDACB1AA8E17800F35E0B /* Health Social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Health Social.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEDCDACF1AA8E17800F35E0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEDCDAD01AA8E17800F35E0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AEDCDAD71AA8E17800F35E0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AEDCDAD91AA8E17800F35E0B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AEDCDADC1AA8E17800F35E0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		AEDCDAF21AA8E93700F35E0B /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +88,13 @@
 		AEF2229C1AC4980900B93F43 /* PeerListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeerListViewController.swift; sourceTree = "<group>"; };
 		AEF2229D1AC4980900B93F43 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		AEF2229E1AC4980900B93F43 /* MPCManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPCManager.swift; sourceTree = "<group>"; };
+		AEF222A21AC9C06800B93F43 /* MessageBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageBoard.swift; sourceTree = "<group>"; };
+		AEF222A41AC9C54600B93F43 /* Thread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
+		AEF222A61AC9C5A700B93F43 /* SportsCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportsCenter.swift; sourceTree = "<group>"; };
+		AEF222A81AC9CAB900B93F43 /* ThreadsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadsViewController.swift; sourceTree = "<group>"; };
+		AEF222AA1AC9D49700B93F43 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		AEF222AC1AC9EBC700B93F43 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
+		AEF222AF1AC9FF6300B93F43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,12 +174,18 @@
 		AEDCDACD1AA8E17800F35E0B /* Health Social */ = {
 			isa = PBXGroup;
 			children = (
+				AEF222AE1AC9FF6300B93F43 /* Main.storyboard */,
 				AEF2229C1AC4980900B93F43 /* PeerListViewController.swift */,
 				AEF2229D1AC4980900B93F43 /* ChatViewController.swift */,
 				AEF2229E1AC4980900B93F43 /* MPCManager.swift */,
 				AEF2229A1AC1E26900B93F43 /* BarCodeViewController.swift */,
 				AEDCDAD01AA8E17800F35E0B /* AppDelegate.swift */,
-				AEDCDAD61AA8E17800F35E0B /* Main.storyboard */,
+				AEF222AC1AC9EBC700B93F43 /* PostsViewController.swift */,
+				AEF222A81AC9CAB900B93F43 /* ThreadsViewController.swift */,
+				AEF222A21AC9C06800B93F43 /* MessageBoard.swift */,
+				AEF222A41AC9C54600B93F43 /* Thread.swift */,
+				AEF222AA1AC9D49700B93F43 /* Post.swift */,
+				AEF222A61AC9C5A700B93F43 /* SportsCenter.swift */,
 				AECA80731AB8EE8400074BE9 /* DebugViewController.swift */,
 				AECA786C1AB3782D00074BE9 /* ParseLogInViewController.swift */,
 				AECA783A1AAF743A00074BE9 /* NewUserTabBarController.swift */,
@@ -250,7 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEDCDAD81AA8E17800F35E0B /* Main.storyboard in Resources */,
+				AEF222B01AC9FF6300B93F43 /* Main.storyboard in Resources */,
 				AEDCDADD1AA8E17800F35E0B /* LaunchScreen.xib in Resources */,
 				AEDCDADA1AA8E17800F35E0B /* Images.xcassets in Resources */,
 			);
@@ -264,17 +282,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEF2229B1AC1E26900B93F43 /* BarCodeViewController.swift in Sources */,
+				AEF222A51AC9C54600B93F43 /* Thread.swift in Sources */,
 				AECA80741AB8EE8500074BE9 /* DebugViewController.swift in Sources */,
 				AEDCDAF71AAE0D4200F35E0B /* LoginViewController.swift in Sources */,
 				AEDCDAF51AAE073100F35E0B /* Person.swift in Sources */,
 				AEF2229F1AC4980900B93F43 /* PeerListViewController.swift in Sources */,
+				AEF222AD1AC9EBC700B93F43 /* PostsViewController.swift in Sources */,
 				AEF222A11AC4980900B93F43 /* MPCManager.swift in Sources */,
+				AEF222A31AC9C06800B93F43 /* MessageBoard.swift in Sources */,
 				AE3D9F2D1AAE7BF300A43370 /* SignUpViewController.swift in Sources */,
+				AEF222A71AC9C5A700B93F43 /* SportsCenter.swift in Sources */,
 				AEDCDAF31AA8E93700F35E0B /* SettingsTableViewController.swift in Sources */,
 				AECA786D1AB3782D00074BE9 /* ParseLogInViewController.swift in Sources */,
 				AECA783B1AAF743A00074BE9 /* NewUserTabBarController.swift in Sources */,
 				AEDCDAD11AA8E17800F35E0B /* AppDelegate.swift in Sources */,
 				AEF222A01AC4980900B93F43 /* ChatViewController.swift in Sources */,
+				AEF222AB1AC9D49700B93F43 /* Post.swift in Sources */,
+				AEF222A91AC9CAB900B93F43 /* ThreadsViewController.swift in Sources */,
 				AE3D9F2B1AAE6FF100A43370 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,20 +306,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AEDCDAD61AA8E17800F35E0B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AEDCDAD71AA8E17800F35E0B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AEDCDADB1AA8E17800F35E0B /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				AEDCDADC1AA8E17800F35E0B /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		AEF222AE1AC9FF6300B93F43 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AEF222AF1AC9FF6300B93F43 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

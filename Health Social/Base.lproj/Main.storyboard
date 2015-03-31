@@ -130,12 +130,13 @@
                             <constraint firstItem="q8s-EY-tKB" firstAttribute="top" secondItem="4Lg-di-EIk" secondAttribute="top" id="7Yl-XF-7d4"/>
                             <constraint firstItem="JSh-yK-6jS" firstAttribute="leading" secondItem="lrX-5q-7hS" secondAttribute="trailing" constant="8" symbolic="YES" id="9ne-Lh-iQ9"/>
                             <constraint firstItem="twp-9X-f1s" firstAttribute="top" secondItem="4Lg-di-EIk" secondAttribute="bottom" constant="30" id="CQI-Jl-qEz"/>
-                            <constraint firstItem="q8s-EY-tKB" firstAttribute="leading" secondItem="daW-2P-0i7" secondAttribute="leading" id="Dpg-AW-pLl"/>
+                            <constraint firstItem="daW-2P-0i7" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="14" id="FCh-3D-GyC"/>
                             <constraint firstItem="lrX-5q-7hS" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="G4r-wZ-NIu"/>
                             <constraint firstItem="lrX-5q-7hS" firstAttribute="top" secondItem="UFF-u7-sJY" secondAttribute="bottom" constant="30" id="GFr-VP-WgK"/>
                             <constraint firstItem="khu-tu-YXZ" firstAttribute="leading" secondItem="enI-uv-3Ko" secondAttribute="trailing" constant="8" symbolic="YES" id="GJb-fA-1sc"/>
                             <constraint firstItem="XuM-ZG-Mif" firstAttribute="top" secondItem="enI-uv-3Ko" secondAttribute="bottom" constant="30" id="IE2-87-9KV"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="R2u-WY-RIr" secondAttribute="bottom" constant="17" id="ISE-h9-0WZ"/>
+                            <constraint firstItem="daW-2P-0i7" firstAttribute="leading" secondItem="q8s-EY-tKB" secondAttribute="leading" id="ISo-XH-HLr"/>
                             <constraint firstItem="R2u-WY-RIr" firstAttribute="leading" secondItem="XuM-ZG-Mif" secondAttribute="leading" id="JhJ-8S-jTn"/>
                             <constraint firstItem="JSh-yK-6jS" firstAttribute="leading" secondItem="twp-9X-f1s" secondAttribute="leading" id="Kz6-df-xyM"/>
                             <constraint firstItem="KQZ-1w-vlD" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="LfT-ws-FhC"/>
@@ -154,7 +155,6 @@
                             <constraint firstItem="enI-uv-3Ko" firstAttribute="trailing" secondItem="XuM-ZG-Mif" secondAttribute="trailing" id="iQ6-X2-iSo"/>
                             <constraint firstItem="khu-tu-YXZ" firstAttribute="bottom" secondItem="enI-uv-3Ko" secondAttribute="bottom" id="iSP-6Z-K9a"/>
                             <constraint firstItem="XuM-ZG-Mif" firstAttribute="leading" secondItem="enI-uv-3Ko" secondAttribute="leading" id="kjs-Mf-5Jg"/>
-                            <constraint firstItem="daW-2P-0i7" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="14" id="lGT-dz-1oR"/>
                             <constraint firstItem="UFF-u7-sJY" firstAttribute="top" secondItem="q8s-EY-tKB" secondAttribute="bottom" constant="30" id="mWr-k9-RoD"/>
                             <constraint firstItem="enI-uv-3Ko" firstAttribute="leading" secondItem="F3u-bQ-3Xi" secondAttribute="leading" id="o41-Nc-gYP"/>
                             <constraint firstItem="jfZ-zM-P1a" firstAttribute="trailing" secondItem="lrX-5q-7hS" secondAttribute="trailing" id="p1M-UB-biB"/>
@@ -240,7 +240,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="beD-ya-ZoY" secondAttribute="centerX" id="6KE-lP-r4N"/>
-                            <constraint firstItem="adm-ko-ENw" firstAttribute="top" secondItem="beD-ya-ZoY" secondAttribute="bottom" id="kwk-RH-Gu8"/>
+                            <constraint firstItem="adm-ko-ENw" firstAttribute="top" secondItem="beD-ya-ZoY" secondAttribute="bottom" constant="49" id="kwk-RH-Gu8"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Scanner" id="2xs-aB-mFx"/>
@@ -252,20 +252,29 @@
             </objects>
             <point key="canvasLocation" x="-506" y="1177"/>
         </scene>
-        <!--Main Page-->
+        <!--Threads-->
         <scene sceneID="3ug-uT-tuW">
             <objects>
-                <tableViewController id="2XZ-tU-Od6" userLabel="Main Page" sceneMemberID="viewController">
+                <tableViewController id="2XZ-tU-Od6" customClass="ThreadsViewController" customModule="Health_Social" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="zfp-h4-Laa">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textField key="tableFooterView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Thread Title here: i.e. Searching for workout partner" minimumFontSize="17" id="x1S-fj-1ZO">
+                            <rect key="frame" x="0.0" y="-30" width="600" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Main Page" id="9V6-iy-wfN">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ThreadCell" id="9V6-iy-wfN">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9V6-iy-wfN" id="mZj-pf-FuQ">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="jNe-wx-aWG" kind="presentation" trigger="accessoryAction" id="amk-J1-lff"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -273,11 +282,85 @@
                             <outlet property="delegate" destination="2XZ-tU-Od6" id="Fxo-QK-Ic5"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Main" id="ju2-cl-MYT"/>
+                    <navigationItem key="navigationItem" title="Threads" id="ju2-cl-MYT">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="Xlc-e4-ZaM">
+                            <connections>
+                                <action selector="addThread:" destination="2XZ-tU-Od6" id="562-Po-QN4"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" tag="1" title="Save" id="cVh-jF-Ibi">
+                            <connections>
+                                <action selector="saveButton:" destination="2XZ-tU-Od6" id="tsy-kY-P6F"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="newThreadField" destination="x1S-fj-1ZO" id="gi9-Sg-ngv"/>
+                        <outlet property="saveButtonLabel" destination="cVh-jF-Ibi" id="GRI-bG-gIy"/>
+                        <outlet property="threadTable" destination="zfp-h4-Laa" id="yUT-u8-PLB"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KBl-7z-Iys" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="306" y="-2481"/>
+        </scene>
+        <!--Posts-->
+        <scene sceneID="9lk-NI-AGZ">
+            <objects>
+                <tableViewController id="jNe-wx-aWG" userLabel="Posts" customClass="PostsViewController" customModule="Health_Social" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mwA-zx-tdo">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="SYP-qf-h9x">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Posts" id="aey-9U-Kyj">
+                                    <barButtonItem key="leftBarButtonItem" systemItem="add" id="8Fp-tL-ryT">
+                                        <connections>
+                                            <action selector="addPost:" destination="jNe-wx-aWG" id="bDw-YQ-sz6"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem key="rightBarButtonItem" systemItem="save" id="IfR-gb-f6v">
+                                        <connections>
+                                            <action selector="saveButton:" destination="jNe-wx-aWG" id="awu-ol-7cb"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
+                        <textField key="tableFooterView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Post here: i.e. Searching for workout partner for bench pressing in mornings" minimumFontSize="17" id="IVd-J4-BgF">
+                            <rect key="frame" x="0.0" y="-30" width="600" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" id="SHG-hC-cEn">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SHG-hC-cEn" id="yUz-ag-t9l" userLabel="Posts">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jNe-wx-aWG" id="IHL-xj-UrM"/>
+                            <outlet property="delegate" destination="jNe-wx-aWG" id="OUo-b1-tWp"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="g1M-ND-bG8"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="newPostField" destination="IVd-J4-BgF" id="8w8-hU-edi"/>
+                        <outlet property="postTable" destination="mwA-zx-tdo" id="Oqb-c1-6iS"/>
+                        <outlet property="saveButtonLabel" destination="IfR-gb-f6v" id="8jU-T3-Zxk"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2SV-K5-3yA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1116" y="-2481"/>
         </scene>
         <!--Message Board-->
         <scene sceneID="J9h-EA-0WZ">
@@ -524,13 +607,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELCOME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfk-a6-pU2">
-                                <rect key="frame" x="257" y="72" width="87" height="21"/>
+                                <rect key="frame" x="257" y="28" width="87" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current User" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uog-j6-N9I">
-                                <rect key="frame" x="251" y="116" width="98" height="21"/>
+                                <rect key="frame" x="251" y="72" width="98" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="98" id="gxz-hA-HZC"/>
                                     <constraint firstAttribute="height" constant="21" id="wT1-ax-BaS"/>
@@ -540,7 +623,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eE2-5l-vWe">
-                                <rect key="frame" x="260" y="201" width="80" height="41"/>
+                                <rect key="frame" x="260" y="157" width="80" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="BbZ-dy-lQf"/>
                                     <constraint firstAttribute="width" constant="80" id="S6Y-J0-eHO"/>
@@ -555,12 +638,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uL-Ou-WDk">
-                                <rect key="frame" x="16" y="148" width="172" height="65"/>
+                                <rect key="frame" x="16" y="104" width="172" height="109"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Parse Log In"/>
                                 <connections>
                                     <action selector="parseTapped:" destination="Irk-lY-Cyu" eventType="touchUpInside" id="P4w-PW-Snh"/>
-                                    <segue destination="i7h-ox-In0" kind="presentation" identifier="goToParse" id="5tf-Ij-VeR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -593,6 +675,7 @@
                         <outlet property="logOutButton" destination="JGL-bF-Xiq" id="urY-MT-sEF"/>
                         <outlet property="parseButton" destination="8uL-Ou-WDk" id="z6I-No-jJT"/>
                         <outlet property="userNameLabel" destination="Uog-j6-N9I" id="pue-lB-gIP"/>
+                        <segue destination="i7h-ox-In0" kind="presentation" identifier="goToParse" id="hyO-cK-Rai"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cmn-H6-uEb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -840,7 +923,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="2XZ-tU-Od6" kind="relationship" relationship="rootViewController" id="XJw-Gm-87G"/>
+                        <segue destination="2XZ-tU-Od6" kind="relationship" relationship="rootViewController" id="5aA-SY-pP1"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ELf-5v-VRV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -913,13 +996,13 @@
                                 <exclude reference="aGo-ub-apI"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="zgh-jT-zWB"/>
-                                <exclude reference="XEQ-8j-L1c"/>
+                                <exclude reference="AZN-MA-z3s"/>
+                                <exclude reference="Ddt-dl-R7d"/>
                                 <exclude reference="G16-tR-9VF"/>
                                 <exclude reference="Q9c-56-1P9"/>
+                                <exclude reference="XEQ-8j-L1c"/>
                                 <exclude reference="ujV-cO-mLq"/>
-                                <exclude reference="Ddt-dl-R7d"/>
-                                <exclude reference="AZN-MA-z3s"/>
+                                <exclude reference="zgh-jT-zWB"/>
                                 <exclude reference="UnJ-i8-WCY"/>
                             </mask>
                         </variation>
@@ -929,13 +1012,13 @@
                                 <include reference="aGo-ub-apI"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="zgh-jT-zWB"/>
-                                <include reference="XEQ-8j-L1c"/>
+                                <include reference="AZN-MA-z3s"/>
+                                <include reference="Ddt-dl-R7d"/>
                                 <include reference="G16-tR-9VF"/>
                                 <include reference="Q9c-56-1P9"/>
+                                <include reference="XEQ-8j-L1c"/>
                                 <include reference="ujV-cO-mLq"/>
-                                <include reference="Ddt-dl-R7d"/>
-                                <include reference="AZN-MA-z3s"/>
+                                <include reference="zgh-jT-zWB"/>
                                 <include reference="UnJ-i8-WCY"/>
                             </mask>
                         </variation>
@@ -1049,17 +1132,17 @@
                                 <exclude reference="b0h-mu-ZI0"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="a5X-Bd-4jA"/>
-                                <exclude reference="E3F-oU-axV"/>
                                 <exclude reference="5od-fq-hmL"/>
-                                <exclude reference="ncy-GI-8QK"/>
+                                <exclude reference="E3F-oU-axV"/>
+                                <exclude reference="a5X-Bd-4jA"/>
                                 <exclude reference="VXU-nm-hKA"/>
                                 <exclude reference="eq9-mP-xbg"/>
-                                <exclude reference="8hN-Ji-pTp"/>
-                                <exclude reference="q25-JL-dda"/>
+                                <exclude reference="ncy-GI-8QK"/>
                                 <exclude reference="35K-ga-SLL"/>
+                                <exclude reference="8hN-Ji-pTp"/>
                                 <exclude reference="M5x-xK-Idx"/>
                                 <exclude reference="gsz-kT-4bA"/>
+                                <exclude reference="q25-JL-dda"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -1069,26 +1152,52 @@
                                 <include reference="b0h-mu-ZI0"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="a5X-Bd-4jA"/>
-                                <include reference="E3F-oU-axV"/>
                                 <include reference="5od-fq-hmL"/>
-                                <include reference="ncy-GI-8QK"/>
+                                <include reference="E3F-oU-axV"/>
+                                <include reference="a5X-Bd-4jA"/>
                                 <include reference="VXU-nm-hKA"/>
                                 <include reference="eq9-mP-xbg"/>
-                                <include reference="8hN-Ji-pTp"/>
-                                <include reference="q25-JL-dda"/>
+                                <include reference="ncy-GI-8QK"/>
                                 <include reference="35K-ga-SLL"/>
+                                <include reference="8hN-Ji-pTp"/>
                                 <include reference="M5x-xK-Idx"/>
                                 <include reference="gsz-kT-4bA"/>
+                                <include reference="q25-JL-dda"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="tblChat" destination="Kb8-4d-Leo" id="Tdu-Jb-sB5"/>
                         <outlet property="txtChat" destination="usu-8z-oIf" id="3M9-5t-HjS"/>
+                        <segue destination="ghh-dX-RVQ" kind="presentation" identifier="chatToMain" id="5C0-kK-2YT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O3R-zU-bbT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <barButtonItem systemItem="add" id="ehg-3r-G4k">
+                    <connections>
+                        <action selector="addThread:" destination="2XZ-tU-Od6" id="tny-ei-NWS"/>
+                    </connections>
+                </barButtonItem>
+                <barButtonItem tag="1" title="Save" id="YGx-lo-KSq">
+                    <connections>
+                        <action selector="saveButton:" destination="2XZ-tU-Od6" id="XIy-Yc-fIR"/>
+                    </connections>
+                </barButtonItem>
+                <barButtonItem systemItem="add" id="kpk-DQ-wnZ">
+                    <connections>
+                        <action selector="addThread:" destination="2XZ-tU-Od6" id="azo-OL-jou"/>
+                    </connections>
+                </barButtonItem>
+                <barButtonItem systemItem="add" id="FPl-Z6-GkR">
+                    <connections>
+                        <action selector="addThread:" destination="2XZ-tU-Od6" id="ocd-9e-8yL"/>
+                    </connections>
+                </barButtonItem>
+                <barButtonItem systemItem="add" id="N6R-fy-ntQ">
+                    <connections>
+                        <action selector="addThread:" destination="2XZ-tU-Od6" id="a0e-eA-OwB"/>
+                    </connections>
+                </barButtonItem>
             </objects>
             <point key="canvasLocation" x="352" y="-808"/>
         </scene>
@@ -1105,9 +1214,10 @@
         <image name="glyphicons-74-wifi" width="31" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FrR-3J-sCz"/>
+        <segue reference="Oj4-uO-AsV"/>
         <segue reference="8Fs-jn-mna"/>
-        <segue reference="Deq-YN-01R"/>
-        <segue reference="XyD-ro-uen"/>
+        <segue reference="z2O-cg-dUS"/>
+        <segue reference="obf-hk-LON"/>
+        <segue reference="5C0-kK-2YT"/>
     </inferredMetricsTieBreakers>
 </document>

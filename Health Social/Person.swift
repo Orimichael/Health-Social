@@ -19,7 +19,6 @@ class Person: PFUser, PFSubclassing {
     // @NSManaged allows Parse to managed thes variables
     @NSManaged var firstName: String?
     @NSManaged var lastName: String?
-    @NSManaged var userName: String?
     @NSManaged var phone: String?
     @NSManaged var photo: UIImage?
     @NSManaged var fitnessGoals: NSArray? //Will consider using Parse Relationship object... relation is a pointer

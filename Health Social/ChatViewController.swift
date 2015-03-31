@@ -56,11 +56,14 @@ class ChatViewController: UIViewController, UITextFieldDelegate, UITableViewDele
     
     @IBAction func endChat(sender: AnyObject) {
         let messageDictionary: [String: String] = ["message": "_end_chat_"]
+        if !appDelegate.mpcManager.session.connectedPeers.isEmpty {
         if appDelegate.mpcManager.sendData(dictionaryWithData: messageDictionary, toPeer: appDelegate.mpcManager.session.connectedPeers[0] as MCPeerID){
             self.dismissViewControllerAnimated(true, completion: { () -> Void in
                 self.appDelegate.mpcManager.session.disconnect()
             })
         }
+    }
+        performSegueWithIdentifier("chatToMain", sender: self)
     }
     
     
@@ -113,16 +116,17 @@ class ChatViewController: UIViewController, UITextFieldDelegate, UITableViewDele
         textField.resignFirstResponder()
         
         let messageDictionary: [String: String] = ["message": textField.text]
-        
-        if appDelegate.mpcManager.sendData(dictionaryWithData: messageDictionary, toPeer: appDelegate.mpcManager.session.connectedPeers[0] as MCPeerID){
+        if !appDelegate.mpcManager.session.connectedPeers.isEmpty {
+            
+            if appDelegate.mpcManager.sendData(dictionaryWithData: messageDictionary, toPeer: appDelegate.mpcManager.session.connectedPeers[0] as MCPeerID){
             
             var dictionary: [String: String] = ["sender": "self", "message": textField.text]
             messagesArray.append(dictionary)
             
             self.updateTableview()
-        }
-        else{
+            }   else {
             println("Could not send data")
+            }
         }
         
         textField.text = ""

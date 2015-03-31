@@ -57,7 +57,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         }
         
         var newUser = Person()
-        newUser.userName = username
+        newUser.username = username
         newUser.password = password
         var uuid = NSUUID().UUIDString
         println(uuid)
