@@ -103,6 +103,27 @@ class ThreadsViewController: UITableViewController, UITableViewDelegate, UITable
         }
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+
+        //Perform segue to Posts when a cell is selected
+        performSegueWithIdentifier("goToPosts", sender: cell)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Load posts view controller for corresponding thread
+        
+        if segue.identifier == "goToPosts" {
+            let cell = sender as UITableViewCell
+            let indexPath = tableView.indexPathForCell(cell)
+            let selectedThread = threads[indexPath!.row]
+            let postsViewController = segue.destinationViewController as PostsViewController
+            postsViewController.thread = selectedThread
+            
+        }
+    }
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

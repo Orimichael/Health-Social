@@ -9,13 +9,13 @@
 import UIKit
 
 class Thread: NSObject {
-    var post: Post?
+    var posts: [Post]
     var author: Person?
     var content: String?
     var title: String?
     
-    init(post: Post? = nil, author: Person? = nil, content: String? = nil, title: String? = nil) {
-        self.post = post
+    init(posts: [Post] = [], author: Person? = nil, content: String? = nil, title: String? = nil) {
+        self.posts = posts
         self.author = author
         self.content = content
         self.title = title

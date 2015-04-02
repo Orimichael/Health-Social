@@ -9,12 +9,12 @@
 import UIKit
 
 class Post: NSObject {
-    var message: String?
+    var messages: [String?]
     var timeStamp: NSDate?
     var parentThread: Thread?
     
-    init(message: String? = nil, timeStamp: NSDate? = nil, parentThread: Thread? = nil) {
-        self.message = message
+    init(messages: [String?] = [], timeStamp: NSDate? = nil, parentThread: Thread? = nil) {
+        self.messages = messages
         self.timeStamp = timeStamp
         self.parentThread = parentThread
     }

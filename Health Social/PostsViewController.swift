@@ -9,22 +9,13 @@
 import UIKit
 
 var posts: [Post] = []
+var thread: Thread?
 
 class PostsViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
-
+    
     var thread: Thread?
     
-    init(thread: Thread?) {
-        super.init()
-        self.thread = thread
-    }
-    
-    required init(coder aDecoder: NSCoder) {
-        super.init()
-    }
-    
     @IBOutlet var postTable: UITableView!
-    
     
     @IBOutlet weak var newPostField: UITextField!
     
@@ -40,19 +31,23 @@ class PostsViewController: UITableViewController, UITableViewDelegate, UITableVi
     
     @IBAction func saveButton(sender: UIBarButtonItem) {
         var newPost = Post()
+
         if !newPostField.text.isEmpty {
-            newPost.message = newPostField.text
+            newPost.messages.append(newPostField.text)
         } else {
             newPostField.text = "Please enter your post"
             return
         }
-        posts.append(newPost)
+        newPost.parentThread = thread
+        
+        thread!.posts.append(newPost)
+        
         
         newPostField.text = ""
         newPostField.hidden = true
         saveButtonLabel.enabled = false
         println(posts.count)
-        println(posts.last!.message!)
+        println(posts.last!.messages.last!)
         self.view.endEditing(true)
         postTable.reloadData()
         
@@ -70,6 +65,12 @@ class PostsViewController: UITableViewController, UITableViewDelegate, UITableVi
     
     func loadPosts(thread: Thread) {
         // Retrieve and load posts from the given thread
+        if !thread.posts.isEmpty {
+            println("Posts for given thread have been loaded")
+            posts = thread.posts
+        } else {
+            println("No posts in this thread")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -86,18 +87,18 @@ class PostsViewController: UITableViewController, UITableViewDelegate, UITableVi
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
         
-        cell.textLabel?.text = posts[indexPath.row].message
+        cell.textLabel?.text = posts[indexPath.row].messages.first!
         
         return cell
     }
     
     override func viewWillAppear(animated: Bool) {
         
-        if var storedThreads: AnyObject = NSUserDefaults.standardUserDefaults().objectForKey("Posts"){
+        if var storedPosts: AnyObject = NSUserDefaults.standardUserDefaults().objectForKey("Posts"){
             
             posts = []
-            for var i = 0; i < storedThreads.count; ++i {
-                posts.append(storedThreads[i] as Post)
+            for var i = 0; i < storedPosts.count; ++i {
+                posts.append(storedPosts[i] as Post)
             }
         }
         
