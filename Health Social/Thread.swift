@@ -8,17 +8,22 @@
 
 import UIKit
 
-class Thread: NSObject {
-    var posts: [Post]
-    var author: Person?
-    var content: String?
-    var title: String?
+class Thread: PFObject, PFSubclassing {
     
-    init(posts: [Post] = [], author: Person? = nil, content: String? = nil, title: String? = nil) {
-        self.posts = posts
-        self.author = author
-        self.content = content
-        self.title = title
+    override class func initialize() {
+        var posts: [Post]
+        var author: Person?
+        var content: String?
+        var title: String?
         
+        var onceToken: dispatch_once_t = 0
+        dispatch_once(&onceToken) {
+            self.registerSubclass()
+        }
     }
+    
+    class func parseClassName() -> String! {
+        return "Thread"
+    }
+
 }

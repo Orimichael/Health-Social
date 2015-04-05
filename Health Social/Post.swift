@@ -8,14 +8,20 @@
 
 import UIKit
 
-class Post: NSObject {
-    var messages: [String?]
-    var timeStamp: NSDate?
-    var parentThread: Thread?
+class Post: PFObject, PFSubclassing {
     
-    init(messages: [String?] = [], timeStamp: NSDate? = nil, parentThread: Thread? = nil) {
-        self.messages = messages
-        self.timeStamp = timeStamp
-        self.parentThread = parentThread
+    override class func initialize() {
+        var messages: [String?]
+        var timeStamp: NSDate?
+        var parentThread: Thread?
+        
+        var onceToken: dispatch_once_t = 0
+        dispatch_once(&onceToken) {
+            self.registerSubclass()
+        }
+    }
+    
+    class func parseClassName() -> String! {
+        return "Post"
     }
 }

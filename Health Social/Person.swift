@@ -22,7 +22,7 @@ class Person: PFUser, PFSubclassing {
     @NSManaged var phone: String?
     @NSManaged var photo: UIImage?
     @NSManaged var fitnessGoals: NSArray? //Will consider using Parse Relationship object... relation is a pointer
-    // var fitnessCenter: SportsCenter
+    @NSManaged var myFitnessCenter: SportsCenter?
     @NSManaged var height: NSNumber? // inches or cm //NSNumber for Int or Bool
     @NSManaged var weight: NSNumber? // pounds or kg
     @NSManaged var age: NSNumber? // years
@@ -37,6 +37,13 @@ class Person: PFUser, PFSubclassing {
     @NSManaged var healthPoints: NSNumber?
     @NSManaged var isLoggedIn: NSNumber?
     @NSManaged var isTrialMember: NSNumber?
+//    var myThreads: [Thread?]
+//    var myPosts: [Post?]
+    @NSManaged var checkInCount: NSNumber? // each time a user checks into sportscenter
+    
+    
+    // Some properties are inherited by PFUSer:
+    // var password: String, var username: String, var objectID: String, var email: String, var authdata: authdata, var emailVerified: Bool, var createdAt: Date, var updatedAt: Date, var ACL: ACL (this is access control list) can be public/private read, write
     
 //    Looks like the initializer is NOT required for PFUser subclassing????
     

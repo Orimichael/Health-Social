@@ -7,14 +7,25 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
-class SportsCenter: NSObject {
-    var location: String? // Needs to be turned into a geolocation with MapKit, instead of a String
-    var members: Array<Person>? // Needs to be filled with members
+class SportsCenter: PFObject, PFSubclassing {
     
-    init(location: String? = nil, members: Array<Person>? = nil) {
-        self.location = location
-        self.members = members
+    override class func initialize() {
+        var location: CLLocation?
+        var members: Array<Person>? // Needs to be filled with members
+        var streetAddress: String?
+        var city: String?
+        var state: String?
         
+        var onceToken: dispatch_once_t = 0
+        dispatch_once(&onceToken) {
+            self.registerSubclass()
+        }
+    }
+    
+    class func parseClassName() -> String! {
+        return "SportsCenter"
     }
 }

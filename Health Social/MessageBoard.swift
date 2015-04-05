@@ -8,16 +8,32 @@
 
 import UIKit
 
-class MessageBoard: NSObject {
-    var title: String?
-    var groupName: String?
-    var thread: Thread?
-    var sportsCenter: SportsCenter?
-    
-    init(title: String? = nil, groupName: String? = nil, thread: Thread? = nil, sportsCenter: SportsCenter? = nil) {
-        self.title = title
-        self.groupName = groupName
-        self.thread = thread
-        self.sportsCenter = sportsCenter
+class MessageBoard: PFObject, PFSubclassing {
+    override class func initialize() {
+        var title: String? = nil
+        var groupName: String? = nil
+        var threads: [Thread?] = []
+        var sportsCenter: SportsCenter? = nil
+        
+        var onceToken: dispatch_once_t = 0
+        dispatch_once(&onceToken) {
+            self.registerSubclass()
+        }
     }
-}
+    
+    class func parseClassName() -> String! {
+        return "MessageBoard"
+    }
+    
+//    var title: String?
+//    var groupName: String?
+//    var threads: [Thread?]
+//    var sportsCenter: SportsCenter?
+//    
+//    init(title: String? = nil, groupName: String? = nil, threads: [Thread?] = [], sportsCenter: SportsCenter? = nil) {
+//        self.title = title
+//        self.groupName = groupName
+//        self.threads = threads
+//        self.sportsCenter = sportsCenter
+
+    }
