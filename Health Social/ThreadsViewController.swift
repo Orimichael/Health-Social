@@ -52,11 +52,30 @@ class ThreadsViewController: UITableViewController, UITableViewDelegate, UITable
         self.view.endEditing(true)
         threadTable.reloadData()
         
-        var relation = user.relationForKey("myThreads")
-        relation.addObject(newThread)
         newThread1.saveInBackground()
         user.saveInBackground()
         
+        var relation = user.relationForKey("myThreads")
+        relation.addObject(newThread1)
+        user["myThreads"].addObject(threads)
+        
+        user.saveInBackgroundWithBlock { (Bool: Bool , error: NSError!) -> Void in
+            println("error saving")
+        }
+        
+//        dispatch_async(dispatch_get_main_queue(), {
+//            newThread1.save()
+//            self.user.save()
+//            
+//            var relation = self.user.relationForKey("myThreads")
+//            relation.addObject(newThread1)
+//            self.user["myThreads"].addObject(threads)
+//            
+//            self.user.saveInBackgroundWithBlock { (Bool: Bool , error: NSError!) -> Void in
+//                println("error saving")
+//            }
+//            
+//        })
     }
     
     
@@ -69,6 +88,8 @@ class ThreadsViewController: UITableViewController, UITableViewDelegate, UITable
         // Do any additional setup after loading the view.
         
         if !user.myThreads.isEmpty {
+            println("\(user.myThreads.count)")
+            println("\(user.myThreads[0].title)")
             threads = user.myThreads
         }
     }

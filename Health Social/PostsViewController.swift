@@ -65,13 +65,30 @@ class PostsViewController: UITableViewController, UITableViewDelegate, UITableVi
         self.view.endEditing(true)
         postTable.reloadData()
         
-        var user = Person.currentUser()
+        newPost1.save()
+        user.save()
+        
         var relation = user.relationForKey("myPosts")
         relation.addObject(newPost1)
-        user.saveInBackground()
+        user["myPosts"].addObject(posts)
 
-        newPost1.saveInBackground()
+        user.saveInBackgroundWithBlock { (Bool: Bool , error: NSError!) -> Void in
+            println("error saving")
+        }
         
+//        dispatch_async(dispatch_get_main_queue(), {
+//            newPost1.save()
+//            self.user.save()
+//            
+//            var relation = self.user.relationForKey("myPosts")
+//            relation.addObject(newPost1)
+//            self.user["myPosts"].addObject(self.posts)
+//            
+//            self.user.saveInBackgroundWithBlock { (Bool: Bool , error: NSError!) -> Void in
+//                println("error saving")
+//            }
+//
+//        })
     }
     
     override func viewDidLoad() {
