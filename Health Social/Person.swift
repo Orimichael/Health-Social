@@ -37,10 +37,9 @@ class Person: PFUser, PFSubclassing {
     @NSManaged var healthPoints: NSNumber?
     @NSManaged var isLoggedIn: NSNumber?
     @NSManaged var isTrialMember: NSNumber?
-    var myThreads: [Thread] = []
+    @NSManaged var myThreads: PFRelation
     var myPosts: [Post] = []
     @NSManaged var checkInCount: NSNumber? // each time a user checks into sportscenter
-
     
     // Some properties are inherited by PFUSer:
     // var password: String, var username: String, var objectID: String, var email: String, var authdata: authdata, var emailVerified: Bool, var createdAt: Date, var updatedAt: Date, var ACL: ACL (this is access control list) can be public/private read, write
