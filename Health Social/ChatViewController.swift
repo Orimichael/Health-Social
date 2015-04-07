@@ -63,7 +63,7 @@ class ChatViewController: UIViewController, UITextFieldDelegate, UITableViewDele
             })
         }
     }
-        performSegueWithIdentifier("chatToMain", sender: self)
+        performSegueWithIdentifier("chatToSocial", sender: self)
     }
     
     

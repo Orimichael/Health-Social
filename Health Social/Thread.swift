@@ -9,13 +9,12 @@
 import UIKit
 
 class Thread: PFObject, PFSubclassing {
+    var posts: [Post] = []
+    @NSManaged var author: Person?
+    @NSManaged var content: String?
+    @NSManaged var title: String?
     
     override class func initialize() {
-        var posts: [Post]
-        var author: Person?
-        var content: String?
-        var title: String?
-        
         var onceToken: dispatch_once_t = 0
         dispatch_once(&onceToken) {
             self.registerSubclass()

@@ -370,10 +370,10 @@
             </objects>
             <point key="canvasLocation" x="1116" y="-2481"/>
         </scene>
-        <!--Message Board-->
+        <!--Leader Boards-->
         <scene sceneID="J9h-EA-0WZ">
             <objects>
-                <viewController id="fsw-V2-xHI" userLabel="Message Board" sceneMemberID="viewController">
+                <viewController id="fsw-V2-xHI" userLabel="Leader Boards" customClass="LeaderBoardTableViewController" customModule="Health_Social" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CVb-dS-NJi"/>
                         <viewControllerLayoutGuide type="bottom" id="9ku-WK-lDL"/>
@@ -392,7 +392,7 @@
                                     <segue destination="Irk-lY-Cyu" kind="presentation" id="8Fs-jn-mna"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Message Board" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujO-EO-jl4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Leader Board" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujO-EO-jl4" userLabel="Leader Board">
                                 <rect key="frame" x="229" y="94" width="143" height="58"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -401,7 +401,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Message Board" id="QRy-kg-ZbW"/>
+                    <tabBarItem key="tabBarItem" title="Leader Board" id="QRy-kg-ZbW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qal-d3-QbQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -919,11 +919,11 @@
             </objects>
             <point key="canvasLocation" x="-2104" y="1177"/>
         </scene>
-        <!--Main-->
+        <!--SocialPlatform-->
         <scene sceneID="SuE-wS-MCU">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ghh-dX-RVQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Main" id="lB3-ic-5WM"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ghh-dX-RVQ" userLabel="SocialPlatform" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Social Platform" id="lB3-ic-5WM"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZOj-T5-bcK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1031,7 +1031,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="jlh-ex-2n7"/>
+                    <tabBarItem key="tabBarItem" title="Chat" id="jlh-ex-2n7"/>
                     <connections>
                         <outlet property="tblPeers" destination="aGo-ub-apI" id="1Ee-cS-8mg"/>
                         <segue destination="Pw8-9X-ukY" kind="presentation" identifier="idSegueChat" modalTransitionStyle="crossDissolve" id="obf-hk-LON"/>
@@ -1177,7 +1177,7 @@
                     <connections>
                         <outlet property="tblChat" destination="Kb8-4d-Leo" id="Tdu-Jb-sB5"/>
                         <outlet property="txtChat" destination="usu-8z-oIf" id="3M9-5t-HjS"/>
-                        <segue destination="ghh-dX-RVQ" kind="presentation" identifier="chatToMain" id="5C0-kK-2YT"/>
+                        <segue destination="ghh-dX-RVQ" kind="presentation" identifier="chatToSocial" id="5C0-kK-2YT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O3R-zU-bbT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1222,10 +1222,10 @@
         <image name="glyphicons-74-wifi" width="31" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Oj4-uO-AsV"/>
-        <segue reference="8Fs-jn-mna"/>
-        <segue reference="z2O-cg-dUS"/>
         <segue reference="obf-hk-LON"/>
-        <segue reference="5C0-kK-2YT"/>
+        <segue reference="z2O-cg-dUS"/>
+        <segue reference="8Fs-jn-mna"/>
+        <segue reference="Oj4-uO-AsV"/>
+        <segue reference="iqB-gY-N5W"/>
     </inferredMetricsTieBreakers>
 </document>

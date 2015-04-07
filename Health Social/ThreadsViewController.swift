@@ -12,6 +12,8 @@ var threads: [Thread] = []
 
 class ThreadsViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
+    var user = Person.currentUser()
+    
     @IBOutlet var threadTable: UITableView!
     
     @IBOutlet weak var newThreadField: UITextField!
@@ -29,13 +31,18 @@ class ThreadsViewController: UITableViewController, UITableViewDelegate, UITable
     
     @IBAction func saveButton(sender: UIBarButtonItem) {
         var newThread = Thread()
+        var newThread1 = PFObject(className: "Thread")
         if !newThreadField.text.isEmpty {
             newThread.title = newThreadField.text
         } else {
             newThreadField.text = "Please enter a thread title"
             return
         }
+        newThread1["title"] = newThread.title
+        newThread1["content"] = newThread.title
         threads.append(newThread)
+        user.myThreads.append(newThread)
+        newThread.author = Person.currentUser()
         
         newThreadField.text = ""
         newThreadField.hidden = true
@@ -44,6 +51,11 @@ class ThreadsViewController: UITableViewController, UITableViewDelegate, UITable
         println(threads.last!.title!)
         self.view.endEditing(true)
         threadTable.reloadData()
+        
+        var relation = user.relationForKey("myThreads")
+        relation.addObject(newThread)
+        newThread1.saveInBackground()
+        user.saveInBackground()
         
     }
     
@@ -55,6 +67,10 @@ class ThreadsViewController: UITableViewController, UITableViewDelegate, UITable
         newThreadField.enabled = false
         saveButtonLabel.enabled = false
         // Do any additional setup after loading the view.
+        
+        if !user.myThreads.isEmpty {
+            threads = user.myThreads
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -78,13 +94,13 @@ class ThreadsViewController: UITableViewController, UITableViewDelegate, UITable
     
     override func viewWillAppear(animated: Bool) {
         
-        if var storedThreads: AnyObject = NSUserDefaults.standardUserDefaults().objectForKey("Threads"){
-            
-            threads = []
-            for var i = 0; i < storedThreads.count; ++i {
-                threads.append(storedThreads[i] as Thread)
-            }
-        }
+//        if var storedThreads: AnyObject = NSUserDefaults.standardUserDefaults().objectForKey("Threads"){
+//            
+//            threads = []
+//            for var i = 0; i < storedThreads.count; ++i {
+//                threads.append(storedThreads[i] as Thread)
+//            }
+//        }
         
         threadTable.reloadData()
     }
@@ -113,13 +129,14 @@ class ThreadsViewController: UITableViewController, UITableViewDelegate, UITable
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Load posts view controller for corresponding thread
-        
         if segue.identifier == "goToPosts" {
+            println("segue identifier = goToPosts")
             let cell = sender as UITableViewCell
             let indexPath = tableView.indexPathForCell(cell)
             let selectedThread = threads[indexPath!.row]
             let postsViewController = segue.destinationViewController as PostsViewController
             postsViewController.thread = selectedThread
+            println("\(selectedThread.title!)")
             
         }
     }

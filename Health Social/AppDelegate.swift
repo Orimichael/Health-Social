@@ -17,12 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
+        
         Parse.setApplicationId("ShPIp8XrYII5GG5hsqQBKDpIXdTqyyy1YFz3nx98", clientKey:"TOVT0AifDifBx9u0nCKDefIYmRa6GVdP3MvEWOyT")
         
-        var object = PFObject(className: "testDataClass")
-        object.addObject("iOSBlog", forKey: "websiteUrl")
-        object.addObject("Five", forKey: "websiteRating")
-        object.save()
+        var object2 = PFObject(className: "TestClass")
+        object2.addObject("Banana", forKey: "favoriteFood")
+        object2.addObject("Chocolate", forKey: "favoriteIceCream")
+        object2.saveInBackground()
         
    //     PFFacebookUtils.initializeFacebook()
         

@@ -31,6 +31,7 @@
 		AECA806E1AB7781900074BE9 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECA806D1AB7781900074BE9 /* Accounts.framework */; };
 		AECA80711AB77F4F00074BE9 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECA80701AB77F4F00074BE9 /* Parse.framework */; };
 		AECA80741AB8EE8500074BE9 /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECA80731AB8EE8400074BE9 /* DebugViewController.swift */; };
+		AED70E3C1AD307B60075CCBC /* LeaderBoardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED70E3B1AD307B60075CCBC /* LeaderBoardTableViewController.swift */; };
 		AEDCDAD11AA8E17800F35E0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDCDAD01AA8E17800F35E0B /* AppDelegate.swift */; };
 		AEDCDADA1AA8E17800F35E0B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEDCDAD91AA8E17800F35E0B /* Images.xcassets */; };
 		AEDCDADD1AA8E17800F35E0B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEDCDADB1AA8E17800F35E0B /* LaunchScreen.xib */; };
@@ -76,6 +77,7 @@
 		AECA806D1AB7781900074BE9 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		AECA80701AB77F4F00074BE9 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		AECA80731AB8EE8400074BE9 /* DebugViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
+		AED70E3B1AD307B60075CCBC /* LeaderBoardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderBoardTableViewController.swift; sourceTree = "<group>"; };
 		AEDCDACB1AA8E17800F35E0B /* Health Social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Health Social.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEDCDACF1AA8E17800F35E0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEDCDAD01AA8E17800F35E0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				AEF222AE1AC9FF6300B93F43 /* Main.storyboard */,
+				AED70E3B1AD307B60075CCBC /* LeaderBoardTableViewController.swift */,
 				AEF2229C1AC4980900B93F43 /* PeerListViewController.swift */,
 				AEF2229D1AC4980900B93F43 /* ChatViewController.swift */,
 				AEF2229E1AC4980900B93F43 /* MPCManager.swift */,
@@ -300,6 +303,7 @@
 				AEF222AB1AC9D49700B93F43 /* Post.swift in Sources */,
 				AEF222A91AC9CAB900B93F43 /* ThreadsViewController.swift in Sources */,
 				AE3D9F2B1AAE6FF100A43370 /* HomeViewController.swift in Sources */,
+				AED70E3C1AD307B60075CCBC /* LeaderBoardTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

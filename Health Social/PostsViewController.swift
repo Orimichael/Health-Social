@@ -8,12 +8,13 @@
 
 import UIKit
 
-var posts: [Post] = []
-var thread: Thread?
-
 class PostsViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
-    var thread: Thread?
+    var user = Person.currentUser()
+    
+    var thread: Thread? = nil
+    
+    var posts: [Post] = []
     
     @IBOutlet var postTable: UITableView!
     
@@ -31,43 +32,69 @@ class PostsViewController: UITableViewController, UITableViewDelegate, UITableVi
     
     @IBAction func saveButton(sender: UIBarButtonItem) {
         var newPost = Post()
-
+        var newPost1 = PFObject(className: "Post")
+        
         if !newPostField.text.isEmpty {
-            newPost.messages.append(newPostField.text)
+            newPost.message = newPostField.text
         } else {
             newPostField.text = "Please enter your post"
             return
         }
-        newPost.parentThread = thread
         
-        thread!.posts.append(newPost)
+        newPost1["content"] = newPost.message
+        newPost1["message"] = newPost.message
+        newPost.parentThread = thread!
+        newPost1["parent"] = thread!
+        newPost.author = Person.currentUser()
+        newPost1["user"] = Person.currentUser()
+        posts.append(newPost)
+        Person.currentUser().myPosts.append(newPost)
+
         
+        
+        self.thread!.posts.append(newPost)
         
         newPostField.text = ""
         newPostField.hidden = true
         saveButtonLabel.enabled = false
         println(posts.count)
-        println(posts.last!.messages.last!)
+        println(posts.last!.message!)
+        
+        
+        
         self.view.endEditing(true)
         postTable.reloadData()
+        
+        var user = Person.currentUser()
+        var relation = user.relationForKey("myPosts")
+        relation.addObject(newPost1)
+        user.saveInBackground()
+
+        newPost1.saveInBackground()
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         loadPosts(thread!)
+        
         newPostField.hidden = true
         newPostField.enabled = false
         saveButtonLabel.enabled = false
         // Do any additional setup after loading the view.
+        
+        println(user.myPosts.count)
+        
     }
     
     func loadPosts(thread: Thread) {
         // Retrieve and load posts from the given thread
+        println("\(thread.title!)")
         if !thread.posts.isEmpty {
-            println("Posts for given thread have been loaded")
             posts = thread.posts
+            println(posts.count)
+            println("Posts for given thread have been loaded")
         } else {
             println("No posts in this thread")
         }
@@ -87,20 +114,20 @@ class PostsViewController: UITableViewController, UITableViewDelegate, UITableVi
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
         
-        cell.textLabel?.text = posts[indexPath.row].messages.first!
+        cell.textLabel?.text = posts[indexPath.row].message
         
         return cell
     }
     
     override func viewWillAppear(animated: Bool) {
         
-        if var storedPosts: AnyObject = NSUserDefaults.standardUserDefaults().objectForKey("Posts"){
-            
-            posts = []
-            for var i = 0; i < storedPosts.count; ++i {
-                posts.append(storedPosts[i] as Post)
-            }
-        }
+//        if var storedPosts: AnyObject = NSUserDefaults.standardUserDefaults().objectForKey("Posts"){
+//            
+//            posts = []
+//            for var i = 0; i < storedPosts.count; ++i {
+//                posts.append(storedPosts[i] as Post)
+//            }
+//        }
         
         postTable.reloadData()
     }

@@ -16,7 +16,7 @@ class Person: PFUser, PFSubclassing {
         self.registerSubclass()
     }
     
-    // @NSManaged allows Parse to managed thes variables
+    // @NSManaged allows Parse to manage these variables
     @NSManaged var firstName: String?
     @NSManaged var lastName: String?
     @NSManaged var phone: String?
@@ -30,17 +30,17 @@ class Person: PFUser, PFSubclassing {
     var personalSettings: NSUserDefaults?
     @NSManaged var numberOfLogins: NSNumber?
     // var classes: Lessons
-    // var friends: [Person()]
-    // var relatives: [Person()]
+     var friends: [Person] = []
+     var relatives: [Person] = []
     // var favoriteExercises: Exercise
     @NSManaged var diet: String?
     @NSManaged var healthPoints: NSNumber?
     @NSManaged var isLoggedIn: NSNumber?
     @NSManaged var isTrialMember: NSNumber?
-//    var myThreads: [Thread?]
-//    var myPosts: [Post?]
+    var myThreads: [Thread] = []
+    var myPosts: [Post] = []
     @NSManaged var checkInCount: NSNumber? // each time a user checks into sportscenter
-    
+
     
     // Some properties are inherited by PFUSer:
     // var password: String, var username: String, var objectID: String, var email: String, var authdata: authdata, var emailVerified: Bool, var createdAt: Date, var updatedAt: Date, var ACL: ACL (this is access control list) can be public/private read, write

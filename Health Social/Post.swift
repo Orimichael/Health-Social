@@ -10,11 +10,13 @@ import UIKit
 
 class Post: PFObject, PFSubclassing {
     
+    @NSManaged var message: String?
+    @NSManaged var timeStamp: NSDate?
+    var parentThread: Thread? = nil
+    var author: Person? = nil
+    
     override class func initialize() {
-        var messages: [String?]
-        var timeStamp: NSDate?
-        var parentThread: Thread?
-        
+
         var onceToken: dispatch_once_t = 0
         dispatch_once(&onceToken) {
             self.registerSubclass()
