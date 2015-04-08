@@ -37,8 +37,8 @@ class Person: PFUser, PFSubclassing {
     @NSManaged var healthPoints: NSNumber?
     @NSManaged var isLoggedIn: NSNumber?
     @NSManaged var isTrialMember: NSNumber?
-    var myThreads: [Thread] = []
-    var myPosts: [Post] = []
+    @NSManaged var myThreads: PFRelation
+    @NSManaged var myPosts: PFRelation
     @NSManaged var checkInCount: NSNumber? // each time a user checks into sportscenter
 
     

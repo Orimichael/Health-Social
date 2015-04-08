@@ -12,7 +12,7 @@ class PostsViewController: UITableViewController, UITableViewDelegate, UITableVi
     
     var user = Person.currentUser()
     
-    var thread: Thread? = nil
+    var currentThread: Thread? = nil
     
     var posts: [Post] = []
     
@@ -32,7 +32,6 @@ class PostsViewController: UITableViewController, UITableViewDelegate, UITableVi
     
     @IBAction func saveButton(sender: UIBarButtonItem) {
         var newPost = Post()
-        var newPost1 = PFObject(className: "Post")
         
         if !newPostField.text.isEmpty {
             newPost.message = newPostField.text
@@ -40,41 +39,41 @@ class PostsViewController: UITableViewController, UITableViewDelegate, UITableVi
             newPostField.text = "Please enter your post"
             return
         }
+    
+        println(self.currentThread!.title!)
         
-        newPost1["content"] = newPost.message
-        newPost1["message"] = newPost.message
-        newPost.parentThread = thread!
-        newPost1["parent"] = thread!
-        newPost.author = Person.currentUser()
-        newPost1["user"] = Person.currentUser()
         posts.append(newPost)
-        Person.currentUser().myPosts.append(newPost)
-
-        
-        
-        self.thread!.posts.append(newPost)
         
         newPostField.text = ""
         newPostField.hidden = true
         saveButtonLabel.enabled = false
         println(posts.count)
         println(posts.last!.message!)
-        
-        
-        
         self.view.endEditing(true)
         postTable.reloadData()
         
-        newPost1.save()
-        user.save()
-        
-        var relation = user.relationForKey("myPosts")
-        relation.addObject(newPost1)
-        user["myPosts"].addObject(posts)
 
-        user.saveInBackgroundWithBlock { (Bool: Bool , error: NSError!) -> Void in
-            println("error saving")
-        }
+        newPost.parent.addObject(currentThread!)
+        newPost.author = Person.currentUser()
+        newPost.ACL = PFACL(user: Person.currentUser())
+        
+        newPost.saveInBackgroundWithBlock { (success, error) -> Void in
+        if error != nil {println("\(error.description)") }
+        self.user.myPosts.addObject(newPost)
+        self.currentThread!.posts.addObject(newPost)
+        self.user.saveInBackground()
+        self.currentThread!.saveInBackground()
+    }
+        
+        println(self.currentThread!.posts.description)
+        
+//        var relation = user.relationForKey("myPosts")
+//        relation.addObject(newPost1)
+//        user["myPosts"].addObject(posts)
+//
+//        user.saveInBackgroundWithBlock { (Bool: Bool , error: NSError!) -> Void in
+//            println("error saving")
+//        }
         
 //        dispatch_async(dispatch_get_main_queue(), {
 //            newPost1.save()
@@ -94,27 +93,40 @@ class PostsViewController: UITableViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadPosts(thread!)
+        loadPosts(currentThread!)
         
         newPostField.hidden = true
         newPostField.enabled = false
         saveButtonLabel.enabled = false
         // Do any additional setup after loading the view.
         
-        println(user.myPosts.count)
+        //The following code would load ALL POSTS that user has written
+        
+//        var query = user.myPosts.query()
+//        query.findObjectsInBackgroundWithBlock { (retrievedPosts, error) -> Void in
+//            if error != nil { println("\(error.description)") }
+//            self.posts = (retrievedPosts as [Post])
+//            self.postTable.reloadData()
+//        }
         
     }
     
     func loadPosts(thread: Thread) {
         // Retrieve and load posts from the given thread
+        
+        self.currentThread! = thread
+        
         println("\(thread.title!)")
-        if !thread.posts.isEmpty {
-            posts = thread.posts
-            println(posts.count)
-            println("Posts for given thread have been loaded")
-        } else {
-            println("No posts in this thread")
-        }
+        
+        var query = thread.posts.query()
+    
+        query.findObjectsInBackgroundWithBlock { (retrievedPosts, error) -> Void in
+            if error != nil { println("\(error.description)") }
+            self.posts = (retrievedPosts as [Post])
+            println(self.posts.count)
+            
+            self.postTable.reloadData()
+            }
     }
 
     override func didReceiveMemoryWarning() {

@@ -31,18 +31,17 @@ class ThreadsViewController: UITableViewController, UITableViewDelegate, UITable
     
     @IBAction func saveButton(sender: UIBarButtonItem) {
         var newThread = Thread()
-        var newThread1 = PFObject(className: "Thread")
+
         if !newThreadField.text.isEmpty {
             newThread.title = newThreadField.text
         } else {
             newThreadField.text = "Please enter a thread title"
             return
         }
-        newThread1["title"] = newThread.title
-        newThread1["content"] = newThread.title
+
         threads.append(newThread)
-        user.myThreads.append(newThread)
-        newThread.author = Person.currentUser()
+        newThread.author = self.user
+        newThread.ACL = PFACL(user: Person.currentUser())
         
         newThreadField.text = ""
         newThreadField.hidden = true
@@ -52,16 +51,19 @@ class ThreadsViewController: UITableViewController, UITableViewDelegate, UITable
         self.view.endEditing(true)
         threadTable.reloadData()
         
-        newThread1.saveInBackground()
-        user.saveInBackground()
-        
-        var relation = user.relationForKey("myThreads")
-        relation.addObject(newThread1)
-        user["myThreads"].addObject(threads)
-        
-        user.saveInBackgroundWithBlock { (Bool: Bool , error: NSError!) -> Void in
-            println("error saving")
+        newThread.saveInBackgroundWithBlock { (success, error) -> Void in
+            if error != nil { println("\(error.description)") }
+            self.user.myThreads.addObject(newThread)
+            self.user.saveInBackground()
         }
+        
+//        var relation = user.relationForKey("myThreads")
+//        relation.addObject(newThread1)
+//        user["myThreads"].addObject(threads)
+//        
+//        user.saveInBackgroundWithBlock { (Bool: Bool , error: NSError!) -> Void in
+//            println("error saving")
+//        }
         
 //        dispatch_async(dispatch_get_main_queue(), {
 //            newThread1.save()
@@ -87,11 +89,14 @@ class ThreadsViewController: UITableViewController, UITableViewDelegate, UITable
         saveButtonLabel.enabled = false
         // Do any additional setup after loading the view.
         
-        if !user.myThreads.isEmpty {
-            println("\(user.myThreads.count)")
-            println("\(user.myThreads[0].title)")
-            threads = user.myThreads
+        // Send query to Parse to retrieve the "myThreads" array of threads from the current user and to load it into the viewcontroller's threads array
+        var query = user.myThreads.query()
+        query.findObjectsInBackgroundWithBlock { (retrievedThreads, error) -> Void in
+            if error != nil { println("\(error.description)") }
+            threads = (retrievedThreads as [Thread])
+            self.threadTable.reloadData()
         }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -151,14 +156,11 @@ class ThreadsViewController: UITableViewController, UITableViewDelegate, UITable
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Load posts view controller for corresponding thread
         if segue.identifier == "goToPosts" {
-            println("segue identifier = goToPosts")
             let cell = sender as UITableViewCell
             let indexPath = tableView.indexPathForCell(cell)
             let selectedThread = threads[indexPath!.row]
             let postsViewController = segue.destinationViewController as PostsViewController
-            postsViewController.thread = selectedThread
-            println("\(selectedThread.title!)")
-            
+            postsViewController.currentThread = selectedThread
         }
     }
     

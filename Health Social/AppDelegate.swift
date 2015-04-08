@@ -25,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         object2.addObject("Chocolate", forKey: "favoriteIceCream")
         object2.saveInBackground()
         
+        PFACL.setDefaultACL(PFACL(), withAccessForCurrentUser: true)
+        
    //     PFFacebookUtils.initializeFacebook()
         
         // Override point for customization after application launch.

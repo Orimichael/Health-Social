@@ -12,8 +12,8 @@ class Post: PFObject, PFSubclassing {
     
     @NSManaged var message: String?
     @NSManaged var timeStamp: NSDate?
-    var parentThread: Thread? = nil
-    var author: Person? = nil
+    @NSManaged var parent: PFRelation
+    @NSManaged var author: Person?
     
     override class func initialize() {
 

@@ -9,10 +9,11 @@
 import UIKit
 
 class Thread: PFObject, PFSubclassing {
-    var posts: [Post] = []
+    @NSManaged var posts: PFRelation
     @NSManaged var author: Person?
     @NSManaged var content: String?
     @NSManaged var title: String?
+    @NSManaged var timeStamp: NSDate?
     
     override class func initialize() {
         var onceToken: dispatch_once_t = 0
