@@ -61,6 +61,8 @@ class ParseLogInViewController: UIViewController, PFLogInViewControllerDelegate,
         }
        //     self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    
 //          If I was MANUALLY creating a loginView I would need following to check for errors:
 //        Person.logInWithUsernameInBackground(username: String!, password: String!) { (user, error) -> Void in
 //             if error != nil {

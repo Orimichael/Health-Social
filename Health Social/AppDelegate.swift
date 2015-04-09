@@ -25,9 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         object2.addObject("Chocolate", forKey: "favoriteIceCream")
         object2.saveInBackground()
         
-        PFACL.setDefaultACL(PFACL(), withAccessForCurrentUser: true)
+        setACL()
         
-   //     PFFacebookUtils.initializeFacebook()
+        //  PFFacebookUtils.initializeFacebook()
         
         // Override point for customization after application launch.
         
@@ -35,6 +35,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         mpcManager = MPCManager()
         
         return true
+    }
+    
+    func setACL() {
+        // Setting the Access Control List. Default for current user, will create PFRoles and set ACL per role
+        PFACL.setDefaultACL(PFACL(), withAccessForCurrentUser: true)
+        
+        var roleACL = PFACL()
+        var admin = PFRole(name: "Administrator", acl: roleACL)
+        roleACL.setWriteAccess(true, forRole: admin)
+        
+        var moderator = PFRole(name: "Moderator", acl: roleACL)
+        roleACL.setWriteAccess(true, forRole: moderator)
+        
+        
+        admin.saveInBackground()
+        moderator.saveInBackground()
+        
     }
 
     func applicationWillResignActive(application: UIApplication) {

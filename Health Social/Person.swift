@@ -30,13 +30,14 @@ class Person: PFUser, PFSubclassing {
     var personalSettings: NSUserDefaults?
     @NSManaged var numberOfLogins: NSNumber?
     // var classes: Lessons
-     var friends: [Person] = []
-     var relatives: [Person] = []
+    @NSManaged var friends: PFRelation
+    @NSManaged var relatives: PFRelation
     // var favoriteExercises: Exercise
     @NSManaged var diet: String?
     @NSManaged var healthPoints: NSNumber?
     @NSManaged var isLoggedIn: NSNumber?
     @NSManaged var isTrialMember: NSNumber?
+    @NSManaged var isAdmin: NSNumber?
     @NSManaged var myThreads: PFRelation
     @NSManaged var myPosts: PFRelation
     @NSManaged var checkInCount: NSNumber? // each time a user checks into sportscenter
