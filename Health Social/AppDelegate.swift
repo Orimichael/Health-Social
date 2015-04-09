@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
-        
+        Person.registerSubclass()
         Parse.setApplicationId("ShPIp8XrYII5GG5hsqQBKDpIXdTqyyy1YFz3nx98", clientKey:"TOVT0AifDifBx9u0nCKDefIYmRa6GVdP3MvEWOyT")
         
         var object2 = PFObject(className: "TestClass")
@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         object2.addObject("Chocolate", forKey: "favoriteIceCream")
         object2.saveInBackground()
         
-        // setACL()
+        setACL()
         
         //  PFFacebookUtils.initializeFacebook()
         
@@ -39,23 +39,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func setACL() {
         // Setting the Access Control List. Default for current user, will create PFRoles and set ACL per role
-        PFACL.setDefaultACL(PFACL(), withAccessForCurrentUser: true)
+        
+       PFACL.setDefaultACL(PFACL(), withAccessForCurrentUser: true)
         
         var roleACL = PFACL()
-        var admin = PFRole(name: "Administrator", acl: roleACL)
-        var moderator = PFRole(name: "Moderator", acl: roleACL)
-        var trainer = PFRole(name: "Trainer", acl: roleACL)
-        admin.saveInBackground()
-        moderator.saveInBackground()
-        trainer.saveInBackground()
         
-        roleACL.setWriteAccess(true, forRole: admin)
-        roleACL.setWriteAccess(true, forRole: moderator)
-        roleACL.setWriteAccess(false, forRole: trainer)
+        var administrator = PFRole(name: "Administrator")
+        administrator.saveInBackground()
         
-        admin.saveInBackground()
-        moderator.saveInBackground()
-        trainer.saveInBackground()
+        // Need to create, save roles prior to applying ACL below
+        
+//        var admin = PFRole(name: "Administrator", acl: roleACL)
+//        var moderator = PFRole(name: "Moderator", acl: roleACL)
+//        var trainer = PFRole(name: "Trainer", acl: roleACL)
+//        admin.saveInBackground()
+//        moderator.saveInBackground()
+//        trainer.saveInBackground()
+//        
+//        roleACL.setWriteAccess(true, forRole: admin)
+//        roleACL.setWriteAccess(true, forRole: moderator)
+//        roleACL.setWriteAccess(false, forRole: trainer)
+//        
+//        admin.saveInBackground()
+//        moderator.saveInBackground()
+//        trainer.saveInBackground()
         
     }
 

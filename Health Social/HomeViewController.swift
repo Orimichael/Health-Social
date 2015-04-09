@@ -10,7 +10,6 @@ import UIKit
 
 
 class HomeViewController: UIViewController {
-
     
     @IBOutlet weak var userNameLabel: UILabel!
     
@@ -19,29 +18,30 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var logOutButton: UIButton!
     
     @IBAction func parseTapped(sender: UIButton) {
-        var currentUser = PFUser.currentUser()
+        var currentUser = Person.currentUser()
         if currentUser != nil {
-            println(currentUser)
+            println(currentUser!)
             parseButton.userInteractionEnabled = false
+            userNameLabel.text = currentUser!.username
+            logOutButton.userInteractionEnabled = true
         } else {
+            println("current user is nil")
         performSegueWithIdentifier("goToParse", sender: self)
         }
     }
 
     @IBAction func logOutTapped(sender: UIButton) {
-        NSUserDefaults.standardUserDefaults().setBool(false, forKey: "isUserLoggedIn")
-        NSUserDefaults.standardUserDefaults().synchronize()
+        var currentUser = Person.currentUser()
         logOutButton.userInteractionEnabled = false
         parseButton.userInteractionEnabled = true
         userNameLabel.text = ""
-        var current = Person.currentUser()
-        if current != nil {
-        var loggedStatus = current!.isLoggedIn
+        if currentUser != nil {
+        var loggedStatus = currentUser!.isLoggedIn
         println(loggedStatus)
-        current!.isLoggedIn = false
-        current!.save()
-        Person.logOut()
-        println(current)
+        currentUser!.isLoggedIn = false
+        currentUser!.save()
+        PFUser.logOut()
+        println(currentUser)
         }
        // self.performSegueWithIdentifier("goToLogIn", sender: self)
     }

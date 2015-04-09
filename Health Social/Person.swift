@@ -102,8 +102,9 @@ class Person: PFUser, PFSubclassing {
 //    }
     
     
-    override class func currentUser() -> Person? {
-        return PFUser.currentUser() as! Person!
+    override class func currentUser() -> (Person?) {
+        
+        return PFUser.currentUser() as! Person?
     }
     
 }

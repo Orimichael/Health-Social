@@ -40,10 +40,11 @@ class PostsViewController: UITableViewController, UITableViewDelegate, UITableVi
             newPostField.text = "Please enter your post"
             return
         }
-    
-        println(self.currentThread!.title!)
+
         
         posts.append(newPost)
+        newPost.author = Person.currentUser()
+        newPost.ACL = PFACL(user: Person.currentUser()!)
         
         newPostField.text = ""
         newPostField.hidden = true
@@ -53,17 +54,16 @@ class PostsViewController: UITableViewController, UITableViewDelegate, UITableVi
         self.view.endEditing(true)
         postTable.reloadData()
         
-
-        newPost.parent.addObject(currentThread!)
-        newPost.author = Person.currentUser()
-        newPost.ACL = PFACL(user: Person.currentUser()!)
-        
         newPost.saveInBackgroundWithBlock { (success, error) -> Void in
-        if error != nil {println("\(error!.description)") }
+        if error != nil {println("\(error!.description)")
+            println("This is an error message")}
+            println("newPost save background")
         self.user!.myPosts.addObject(newPost)
         self.currentThread!.posts.addObject(newPost)
+        
         self.user!.saveInBackground()
         self.currentThread!.saveInBackground()
+            newPost["parent"] = self.currentThread!
     }
         
         println(self.currentThread!.posts.description)
@@ -116,15 +116,14 @@ class PostsViewController: UITableViewController, UITableViewDelegate, UITableVi
         // Retrieve and load posts from the given thread
         
         self.currentThread! = thread
-        
-        println("\(thread.title!)")
+
         
         var query = thread.posts.query()
     
         query!.findObjectsInBackgroundWithBlock { (retrievedPosts, error) -> Void in
             if error != nil { println("\(error!.description)") }
             self.posts = (retrievedPosts as! [Post])
-            println(self.posts.count)
+
             
             self.postTable.reloadData()
             }

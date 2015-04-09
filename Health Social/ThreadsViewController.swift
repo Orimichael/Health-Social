@@ -52,6 +52,7 @@ class ThreadsViewController: UITableViewController, UITableViewDelegate, UITable
         self.view.endEditing(true)
         threadTable.reloadData()
         
+        
         newThread.saveInBackgroundWithBlock { (success, error) -> Void in
             if error != nil { println("\(error!.description)") }
             self.user!.myThreads.addObject(newThread)
@@ -91,13 +92,14 @@ class ThreadsViewController: UITableViewController, UITableViewDelegate, UITable
         // Do any additional setup after loading the view.
         
         // Send query to Parse to retrieve the "myThreads" array of threads from the current user and to load it into the viewcontroller's threads array
+        if user != nil {
         var query = user!.myThreads.query()
         query!.findObjectsInBackgroundWithBlock { (retrievedThreads, error) -> Void in
             if error != nil { println("\(error!.description)") }
             threads = (retrievedThreads as! [Thread])
             self.threadTable.reloadData()
+            }
         }
-        
     }
 
     override func didReceiveMemoryWarning() {

@@ -17,6 +17,8 @@
 #import <Bolts/BFAppLinkNavigation.h>
 #import <Bolts/BFAppLink.h>
 #import <Bolts/BFAppLinkTarget.h>
+#import <Bolts/BFAppLinkResolving.h>
+#import <Bolts/BFWebViewAppLinkResolver.h>
 #import <Bolts/BFURL.h>
 #import <Bolts/BFMeasurementEvent.h>
 #import <Bolts/BFAppLinkReturnToRefererController.h>
