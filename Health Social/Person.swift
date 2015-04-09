@@ -11,9 +11,19 @@ import UIKit
 import Foundation
 
 class Person: PFUser, PFSubclassing {
+ 
     
-    override class func load() {
-        self.registerSubclass()
+    // Apparently class func load() doesn't work with new XCode, Parse SDK frameworks
+    
+//    override class func load() {
+//        self.registerSubclass()
+//    }
+    
+    override class func initialize() {
+        var onceToken : dispatch_once_t = 0;
+        dispatch_once(&onceToken) {
+            self.registerSubclass()
+        }
     }
     
     // @NSManaged allows Parse to manage these variables
@@ -92,8 +102,8 @@ class Person: PFUser, PFSubclassing {
 //    }
     
     
-    override class func currentUser() -> Person! {
-        return PFUser.currentUser() as Person!
+    override class func currentUser() -> Person? {
+        return PFUser.currentUser() as! Person!
     }
     
 }

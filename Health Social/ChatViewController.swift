@@ -16,7 +16,7 @@ class ChatViewController: UIViewController, UITextFieldDelegate, UITableViewDele
     
     var messagesArray: [Dictionary<String, String>] = []
     
-    let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     
     override func viewDidLoad() {
@@ -57,7 +57,7 @@ class ChatViewController: UIViewController, UITextFieldDelegate, UITableViewDele
     @IBAction func endChat(sender: AnyObject) {
         let messageDictionary: [String: String] = ["message": "_end_chat_"]
         if !appDelegate.mpcManager.session.connectedPeers.isEmpty {
-        if appDelegate.mpcManager.sendData(dictionaryWithData: messageDictionary, toPeer: appDelegate.mpcManager.session.connectedPeers[0] as MCPeerID){
+        if appDelegate.mpcManager.sendData(dictionaryWithData: messageDictionary, toPeer: appDelegate.mpcManager.session.connectedPeers[0] as! MCPeerID){
             self.dismissViewControllerAnimated(true, completion: { () -> Void in
                 self.appDelegate.mpcManager.session.disconnect()
             })
@@ -80,7 +80,7 @@ class ChatViewController: UIViewController, UITextFieldDelegate, UITableViewDele
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("idCell") as UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("idCell") as! UITableViewCell
         
         let currentMessage = messagesArray[indexPath.row] as Dictionary<String, String>
 
@@ -118,7 +118,7 @@ class ChatViewController: UIViewController, UITextFieldDelegate, UITableViewDele
         let messageDictionary: [String: String] = ["message": textField.text]
         if !appDelegate.mpcManager.session.connectedPeers.isEmpty {
             
-            if appDelegate.mpcManager.sendData(dictionaryWithData: messageDictionary, toPeer: appDelegate.mpcManager.session.connectedPeers[0] as MCPeerID){
+            if appDelegate.mpcManager.sendData(dictionaryWithData: messageDictionary, toPeer: appDelegate.mpcManager.session.connectedPeers[0] as! MCPeerID){
             
             var dictionary: [String: String] = ["sender": "self", "message": textField.text]
             messagesArray.append(dictionary)
@@ -148,14 +148,14 @@ class ChatViewController: UIViewController, UITextFieldDelegate, UITableViewDele
     
     func handleMPCReceivedDataWithNotification(notification: NSNotification) {
         // Get the dictionary containing the data and the source peer from the notification.
-        let receivedDataDictionary = notification.object as Dictionary<String, AnyObject>
+        let receivedDataDictionary = notification.object as! Dictionary<String, AnyObject>
         
         // "Extract" the data and the source peer from the received dictionary.
         let data = receivedDataDictionary["data"] as? NSData
-        let fromPeer = receivedDataDictionary["fromPeer"] as MCPeerID
+        let fromPeer = receivedDataDictionary["fromPeer"] as! MCPeerID
         
         // Convert the data (NSData) into a Dictionary object.
-        let dataDictionary = NSKeyedUnarchiver.unarchiveObjectWithData(data!) as Dictionary<String, String>
+        let dataDictionary = NSKeyedUnarchiver.unarchiveObjectWithData(data!) as! Dictionary<String, String>
         
         // Check if there's an entry with the "message" key.
         if let message = dataDictionary["message"] {

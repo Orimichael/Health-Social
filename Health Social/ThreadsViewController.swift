@@ -31,7 +31,8 @@ class ThreadsViewController: UITableViewController, UITableViewDelegate, UITable
     
     @IBAction func saveButton(sender: UIBarButtonItem) {
         var newThread = Thread()
-
+        var timeStamp = newThread.createdAt
+        
         if !newThreadField.text.isEmpty {
             newThread.title = newThreadField.text
         } else {
@@ -41,7 +42,7 @@ class ThreadsViewController: UITableViewController, UITableViewDelegate, UITable
 
         threads.append(newThread)
         newThread.author = self.user
-        newThread.ACL = PFACL(user: Person.currentUser())
+        newThread.ACL = PFACL(user: Person.currentUser()!)
         
         newThreadField.text = ""
         newThreadField.hidden = true
@@ -52,9 +53,9 @@ class ThreadsViewController: UITableViewController, UITableViewDelegate, UITable
         threadTable.reloadData()
         
         newThread.saveInBackgroundWithBlock { (success, error) -> Void in
-            if error != nil { println("\(error.description)") }
-            self.user.myThreads.addObject(newThread)
-            self.user.saveInBackground()
+            if error != nil { println("\(error!.description)") }
+            self.user!.myThreads.addObject(newThread)
+            self.user!.saveInBackground()
         }
         
 //        var relation = user.relationForKey("myThreads")
@@ -90,10 +91,10 @@ class ThreadsViewController: UITableViewController, UITableViewDelegate, UITable
         // Do any additional setup after loading the view.
         
         // Send query to Parse to retrieve the "myThreads" array of threads from the current user and to load it into the viewcontroller's threads array
-        var query = user.myThreads.query()
-        query.findObjectsInBackgroundWithBlock { (retrievedThreads, error) -> Void in
-            if error != nil { println("\(error.description)") }
-            threads = (retrievedThreads as [Thread])
+        var query = user!.myThreads.query()
+        query!.findObjectsInBackgroundWithBlock { (retrievedThreads, error) -> Void in
+            if error != nil { println("\(error!.description)") }
+            threads = (retrievedThreads as! [Thread])
             self.threadTable.reloadData()
         }
         
@@ -156,10 +157,10 @@ class ThreadsViewController: UITableViewController, UITableViewDelegate, UITable
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Load posts view controller for corresponding thread
         if segue.identifier == "goToPosts" {
-            let cell = sender as UITableViewCell
+            let cell = sender as! UITableViewCell
             let indexPath = tableView.indexPathForCell(cell)
             let selectedThread = threads[indexPath!.row]
-            let postsViewController = segue.destinationViewController as PostsViewController
+            let postsViewController = segue.destinationViewController as! PostsViewController
             postsViewController.currentThread = selectedThread
         }
     }

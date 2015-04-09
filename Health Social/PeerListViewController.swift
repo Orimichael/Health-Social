@@ -12,7 +12,7 @@ class PeerListViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBOutlet weak var tblPeers: UITableView!
     
-    let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     var isAdvertising: Bool!
     
@@ -88,7 +88,7 @@ class PeerListViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("idCellPeer") as UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("idCellPeer") as! UITableViewCell
             
         cell.textLabel?.text = appDelegate.mpcManager.foundPeers[indexPath.row].displayName
             

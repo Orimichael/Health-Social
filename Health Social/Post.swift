@@ -11,7 +11,6 @@ import UIKit
 class Post: PFObject, PFSubclassing {
     
     @NSManaged var message: String?
-    @NSManaged var timeStamp: NSDate?
     @NSManaged var parent: PFRelation
     @NSManaged var author: Person?
     
@@ -23,7 +22,7 @@ class Post: PFObject, PFSubclassing {
         }
     }
     
-    class func parseClassName() -> String! {
+    class func parseClassName() -> String {
         return "Post"
     }
 }

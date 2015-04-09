@@ -31,8 +31,8 @@ class ParseLogInViewController: UIViewController, PFLogInViewControllerDelegate,
             
             //customize logInViewController
             logInViewController.fields = PFLogInFields.UsernameAndPassword | PFLogInFields.LogInButton | PFLogInFields.PasswordForgotten | PFLogInFields.Facebook | PFLogInFields.SignUpButton | PFLogInFields.DismissButton
-            logInViewController.facebookPermissions = NSArray(objects:"friends_about_me")
-            logInViewController.logInView.logo  = UIImageView(image: UIImage(named: "Logo"))
+            logInViewController.facebookPermissions = NSArray(objects:"friends_about_me") as [AnyObject]
+            logInViewController.logInView!.logo  = UIImageView(image: UIImage(named: "Logo"))
 
             
             //create a signUpViewController instance
@@ -45,10 +45,10 @@ class ParseLogInViewController: UIViewController, PFLogInViewControllerDelegate,
             // If a user is already logged in, register log in status and update the number of logins
             println("Current user already logged in")
             var current = Person.currentUser()
-            current.isLoggedIn = true
+            current!.isLoggedIn = true
 //          current.numberOfLogins += NSNumber?(current.numberOfLogins + 1)
-            current.save()
-            if (current.firstName != nil && current.lastName != nil && current.email != nil) {
+            current!.save()
+            if (current!.firstName != nil && current!.lastName != nil && current!.email != nil) {
                 // If the current user has already saved the requisite information, go to main page
                 println("Required information has been saved")
                 self.performSegueWithIdentifier("goToMain", sender: self)
@@ -83,7 +83,7 @@ class ParseLogInViewController: UIViewController, PFLogInViewControllerDelegate,
     Add my delegate methods here
     */
     
-    func logInViewController(logInController: PFLogInViewController!, didLogInUser user: PFUser!) {
+    func logInViewController(logInController: PFLogInViewController, didLogInUser user: PFUser) {
 
     self.dismissViewControllerAnimated(true, completion: { () -> Void in
      // Enter the Perform Segue code here

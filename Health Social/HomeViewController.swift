@@ -36,10 +36,10 @@ class HomeViewController: UIViewController {
         userNameLabel.text = ""
         var current = Person.currentUser()
         if current != nil {
-        var loggedStatus = current.isLoggedIn
+        var loggedStatus = current!.isLoggedIn
         println(loggedStatus)
-        current.isLoggedIn = false
-        current.save()
+        current!.isLoggedIn = false
+        current!.save()
         Person.logOut()
         println(current)
         }
@@ -71,7 +71,7 @@ class HomeViewController: UIViewController {
         if isUserLoggedIn {
             logOutButton.userInteractionEnabled = true
             parseButton.userInteractionEnabled = false
-            userNameLabel.text = Person.currentUser().username
+            userNameLabel.text = Person.currentUser()!.username
         } else {
             userNameLabel.text = ""
         }

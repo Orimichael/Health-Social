@@ -32,6 +32,7 @@ class PostsViewController: UITableViewController, UITableViewDelegate, UITableVi
     
     @IBAction func saveButton(sender: UIBarButtonItem) {
         var newPost = Post()
+        var timeStamp = newPost.createdAt
         
         if !newPostField.text.isEmpty {
             newPost.message = newPostField.text
@@ -55,13 +56,13 @@ class PostsViewController: UITableViewController, UITableViewDelegate, UITableVi
 
         newPost.parent.addObject(currentThread!)
         newPost.author = Person.currentUser()
-        newPost.ACL = PFACL(user: Person.currentUser())
+        newPost.ACL = PFACL(user: Person.currentUser()!)
         
         newPost.saveInBackgroundWithBlock { (success, error) -> Void in
-        if error != nil {println("\(error.description)") }
-        self.user.myPosts.addObject(newPost)
+        if error != nil {println("\(error!.description)") }
+        self.user!.myPosts.addObject(newPost)
         self.currentThread!.posts.addObject(newPost)
-        self.user.saveInBackground()
+        self.user!.saveInBackground()
         self.currentThread!.saveInBackground()
     }
         
@@ -120,9 +121,9 @@ class PostsViewController: UITableViewController, UITableViewDelegate, UITableVi
         
         var query = thread.posts.query()
     
-        query.findObjectsInBackgroundWithBlock { (retrievedPosts, error) -> Void in
-            if error != nil { println("\(error.description)") }
-            self.posts = (retrievedPosts as [Post])
+        query!.findObjectsInBackgroundWithBlock { (retrievedPosts, error) -> Void in
+            if error != nil { println("\(error!.description)") }
+            self.posts = (retrievedPosts as! [Post])
             println(self.posts.count)
             
             self.postTable.reloadData()

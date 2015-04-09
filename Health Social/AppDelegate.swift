@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         object2.addObject("Chocolate", forKey: "favoriteIceCream")
         object2.saveInBackground()
         
-        setACL()
+        // setACL()
         
         //  PFFacebookUtils.initializeFacebook()
         
@@ -43,14 +43,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         var roleACL = PFACL()
         var admin = PFRole(name: "Administrator", acl: roleACL)
-        roleACL.setWriteAccess(true, forRole: admin)
-        
         var moderator = PFRole(name: "Moderator", acl: roleACL)
-        roleACL.setWriteAccess(true, forRole: moderator)
+        var trainer = PFRole(name: "Trainer", acl: roleACL)
+        admin.saveInBackground()
+        moderator.saveInBackground()
+        trainer.saveInBackground()
         
+        roleACL.setWriteAccess(true, forRole: admin)
+        roleACL.setWriteAccess(true, forRole: moderator)
+        roleACL.setWriteAccess(false, forRole: trainer)
         
         admin.saveInBackground()
         moderator.saveInBackground()
+        trainer.saveInBackground()
         
     }
 

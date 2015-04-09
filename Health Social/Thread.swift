@@ -13,7 +13,6 @@ class Thread: PFObject, PFSubclassing {
     @NSManaged var author: Person?
     @NSManaged var content: String?
     @NSManaged var title: String?
-    @NSManaged var timeStamp: NSDate?
     
     override class func initialize() {
         var onceToken: dispatch_once_t = 0
@@ -22,7 +21,7 @@ class Thread: PFObject, PFSubclassing {
         }
     }
     
-    class func parseClassName() -> String! {
+    class func parseClassName() -> String {
         return "Thread"
     }
 

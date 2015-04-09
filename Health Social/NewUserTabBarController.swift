@@ -40,10 +40,10 @@ class NewUserTabBarController: UIViewController {
         
         if requiredFieldsFilled() {
         
-        current.firstName = firstNameText.text
-        current.lastName = lastNameText.text
+        current!.firstName = firstNameText.text
+        current!.lastName = lastNameText.text
         if isValidEmail(emailText.text) {
-            current.email = emailText.text
+            current!.email = emailText.text
         } else {
             clearTextField(emailText)
             displayAlertMessage("Please enter a valid email")
@@ -52,7 +52,7 @@ class NewUserTabBarController: UIViewController {
         if phoneText.text != "" {
             println(phoneText.text)
             if isValidPhone(phoneText.text) {
-                current.phone = phoneText.text
+                current!.phone = phoneText.text
             } else {
                 clearTextField(phoneText)
                 displayAlertMessage("Please enter phone number in correct format: XXX-XXX-XXXX")
@@ -63,7 +63,7 @@ class NewUserTabBarController: UIViewController {
             println("birthday is not nil")
             println(birthdateText.text)
             if isCorrectBirthdayFormat(birthdateText.text).0 {
-            current.birthdate = isCorrectBirthdayFormat(birthdateText.text).1
+            current!.birthdate = isCorrectBirthdayFormat(birthdateText.text).1
             } else {
             clearTextField(birthdateText)
             displayAlertMessage("Please enter birthdate in correct format: YYYY-MM-DD")
@@ -75,7 +75,7 @@ class NewUserTabBarController: UIViewController {
             println(heightText.text)
             if isValidHeight(heightText.text) {
                 var heightAsInt = heightText.text.toInt()!
-                current.height = heightAsInt
+                current!.height = heightAsInt
             } else {
                 clearTextField(heightText)
                 displayAlertMessage("Please enter height as a whole number greater than zero")
@@ -86,7 +86,7 @@ class NewUserTabBarController: UIViewController {
             println("weight is not nil")
             if isValidWeight(weightText.text) {
                 var weightAsInt = weightText.text.toInt()!
-                current.weight = weightAsInt
+                current!.weight = weightAsInt
             } else {
                 clearTextField(weightText)
                 displayAlertMessage("Please enter weight as a whole number greater than zero")
@@ -95,7 +95,7 @@ class NewUserTabBarController: UIViewController {
         
 
         
-        current.save()
+        current!.save()
         performSegueWithIdentifier("newUserToMain", sender: self)
         }
     }
@@ -103,9 +103,9 @@ class NewUserTabBarController: UIViewController {
     func isValidPhone(value: String) -> Bool {
         let PHONE_REGEX = "^\\d{3}-\\d{3}-\\d{4}$"
         var phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
-        var result =  phoneTest?.evaluateWithObject(value)
+        var result =  phoneTest.evaluateWithObject(value)
         
-        return result!
+        return result
     }
     
     func isValidEmail(testStr:String) -> Bool {
@@ -128,17 +128,17 @@ class NewUserTabBarController: UIViewController {
     func isValidWeight(weight: String) -> Bool {
         let PHONE_REGEX = "[0-9]+"
         var weightTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
-        var result =  weightTest?.evaluateWithObject(weight)
+        var result =  weightTest.evaluateWithObject(weight)
         
-        return result!
+        return result
     }
     
     func isValidHeight(height: String) -> Bool {
         let PHONE_REGEX = "[0-9]+"
         var heightTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
-        var result =  heightTest?.evaluateWithObject(height)
+        var result =  heightTest.evaluateWithObject(height)
         
-        return result!
+        return result
     }
     
     func clearTextField (textField: UITextField!) {
