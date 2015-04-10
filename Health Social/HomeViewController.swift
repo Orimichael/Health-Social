@@ -37,10 +37,11 @@ class HomeViewController: UIViewController {
         userNameLabel.text = ""
         if currentUser != nil {
         var loggedStatus = currentUser!.isLoggedIn
-        println(loggedStatus)
+        println(loggedStatus!)
         currentUser!.isLoggedIn = false
         currentUser!.save()
         PFUser.logOut()
+        currentUser = Person.currentUser()
         println(currentUser)
         }
        // self.performSegueWithIdentifier("goToLogIn", sender: self)

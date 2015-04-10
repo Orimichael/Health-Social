@@ -46,8 +46,10 @@ class ParseLogInViewController: UIViewController, PFLogInViewControllerDelegate,
             println("Current user already logged in")
             var current = Person.currentUser()
             current!.isLoggedIn = true
-//          current.numberOfLogins += NSNumber?(current.numberOfLogins + 1)
+            // Counts the number of times a user has logged in
+            current!.incrementKey("numberOfLogins")
             current!.save()
+            
             if (current!.firstName != nil && current!.lastName != nil && current!.email != nil) {
                 // If the current user has already saved the requisite information, go to main page
                 println("Required information has been saved")
