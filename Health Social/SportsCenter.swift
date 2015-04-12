@@ -12,7 +12,7 @@ import CoreLocation
 
 class SportsCenter: PFObject, PFSubclassing {
     
-    @NSManaged var location: CLLocation? //Need to check how Parse can handle locations..
+    @NSManaged var location: PFGeoPoint? //Need to check how Parse can handle locations..
     var members: [Person] = []   // Needs to be filled with members
     @NSManaged var streetAddress: String?
     @NSManaged var city: String?

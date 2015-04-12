@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE1F724A1AD99110004B037E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE1F72491AD99110004B037E /* MapKit.framework */; };
 		AE3D9F2B1AAE6FF100A43370 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3D9F2A1AAE6FF100A43370 /* HomeViewController.swift */; };
 		AE3D9F2D1AAE7BF300A43370 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3D9F2C1AAE7BF300A43370 /* SignUpViewController.swift */; };
 		AECA783B1AAF743A00074BE9 /* NewUserTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECA783A1AAF743A00074BE9 /* NewUserTabBarController.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE1F72491AD99110004B037E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AE3D9F2A1AAE6FF100A43370 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AE3D9F2C1AAE7BF300A43370 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		AECA783A1AAF743A00074BE9 /* NewUserTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserTabBarController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE1F724A1AD99110004B037E /* MapKit.framework in Frameworks */,
 				AECA806E1AB7781900074BE9 /* Accounts.framework in Frameworks */,
 				AECA806C1AB7780A00074BE9 /* Social.framework in Frameworks */,
 				AECA78561AB2051A00074BE9 /* libsqlite3.dylib in Frameworks */,
@@ -159,6 +162,7 @@
 		AEDCDAC21AA8E17700F35E0B = {
 			isa = PBXGroup;
 			children = (
+				AE1F72491AD99110004B037E /* MapKit.framework */,
 				AEDCDACD1AA8E17800F35E0B /* Health Social */,
 				AEDCDACC1AA8E17800F35E0B /* Products */,
 				AECA78691AB2151B00074BE9 /* Health Social-Bridging-Header.h */,

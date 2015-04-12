@@ -9,8 +9,10 @@
 
 import UIKit
 import Foundation
+import CoreLocation
+import MapKit
 
-class Person: PFUser, PFSubclassing {
+class Person: PFUser, PFSubclassing, CLLocationManagerDelegate {
  
     
     // Apparently class func load() doesn't work with new XCode, Parse SDK frameworks
@@ -30,7 +32,7 @@ class Person: PFUser, PFSubclassing {
     @NSManaged var firstName: String?
     @NSManaged var lastName: String?
     @NSManaged var phone: String?
-    @NSManaged var photo: UIImage?
+    @NSManaged var photo: PFImageView?
     @NSManaged var fitnessGoals: NSArray? //Will consider using Parse Relationship object... relation is a pointer
     @NSManaged var myFitnessCenter: SportsCenter?
     @NSManaged var height: NSNumber? // inches or cm //NSNumber for Int or Bool
@@ -51,6 +53,10 @@ class Person: PFUser, PFSubclassing {
     @NSManaged var myThreads: PFRelation
     @NSManaged var myPosts: PFRelation
     @NSManaged var checkInCount: NSNumber? // each time a user checks into sportscenter
+    @NSManaged var location: PFGeoPoint?
+    var activePlace = -1
+    var places = [Dictionary<String,String>()]
+    
 
     
     // Some properties are inherited by PFUSer:
@@ -62,7 +68,7 @@ class Person: PFUser, PFSubclassing {
 //        lastName: String? = nil,
 //        userName: String? = nil,
 //        password: String? = nil,
-//        photo: UIImage? = nil,
+//        photo: PFImageview? = nil,
 //        fitnessGoals: NSArray? = nil,
 //        numberOfLogins: Int? = nil,
 //        // var fitnessCenter: SportsCenter
@@ -96,11 +102,50 @@ class Person: PFUser, PFSubclassing {
 //            self.isLoggedIn = isLoggedIn
 //            self.numberOfLogins = numberOfLogins
 //    }
-//    Apparently for PFUser only, this class function should NOT be included:
-//    override class func parseClassName () -> String {
-//        return "User"
-//    }
     
+    class func getLocation() {
+        var manager: CLLocationManager
+        var currentActive = currentUser()!.activePlace
+        var placeArray = currentUser()!.places
+        
+        manager = CLLocationManager()
+        manager.delegate = self.currentUser()
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
+        
+        if currentActive == -1 { //asks for permission to use location at beginning
+            manager.requestWhenInUseAuthorization()
+            manager.startUpdatingLocation()
+            currentUser()!.incrementKey("numberOfLogins")
+        }
+        else
+        {
+            var lat = NSString(string: placeArray[currentActive]["lat"]!).doubleValue
+            var lon = NSString(string: placeArray[currentActive]["lon"]!).doubleValue
+        }
+
+        // This function should RETURN the user's location -> possibly for NSNotifications??
+        
+//        var manager: CLLocationManager!
+//        var latitude: CLLocationDegrees = Person.currentUser().location.coordinate.latitude
+//        var longitude: CLLocationDegrees = Person.currentUser().location.coordinate.longitude
+//        
+//        PFGeoPoint.geoPointForCurrentLocationInBackground { (geoPoint: NSString, error: NSError!) -> Void in
+//            if error == nil {
+//                (println("error in geoPointForCurentLocation code"))
+//            }
+//        }
+//            
+//        PFGeoPoint.geoPointForCurrentLocationInBackground {
+//            (geoPoint: PFGeoPoint!, error: NSError!) -> Void in
+//            if error == nil {
+//                // do something with the new geoPoint
+//            }
+        }
+    
+
     
     override class func currentUser() -> (Person?) {
         

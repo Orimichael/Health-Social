@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3N1-mU-Jhy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3N1-mU-Jhy">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -201,7 +201,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Workout!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCK-XI-gKH">
                                 <rect key="frame" x="219" y="135" width="143" height="58"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -226,7 +226,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No QR Code is detected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beD-ya-ZoY">
-                                <rect key="frame" x="0.0" y="511" width="600" height="40"/>
+                                <rect key="frame" x="0.0" y="462" width="600" height="40"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="7Nn-Ap-haL"/>
@@ -275,7 +275,7 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="A2c-d2-U9V">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -373,44 +373,35 @@
         <!--Leader Boards-->
         <scene sceneID="J9h-EA-0WZ">
             <objects>
-                <viewController id="fsw-V2-xHI" userLabel="Leader Boards" customClass="LeaderBoardTableViewController" customModule="Health_Social" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="CVb-dS-NJi"/>
-                        <viewControllerLayoutGuide type="bottom" id="9ku-WK-lDL"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="DBh-2l-vOr">
+                <tableViewController id="fsw-V2-xHI" userLabel="Leader Boards" customClass="LeaderBoardTableViewController" customModule="Health_Social" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="AbE-iP-aGs">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ay7-JL-6aW">
-                                <rect key="frame" x="23" y="13" width="27" height="26"/>
-                                <state key="normal" image="glyphicons-21-home">
-                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Irk-lY-Cyu" kind="presentation" id="8Fs-jn-mna"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Leader Board" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujO-EO-jl4" userLabel="Leader Board">
-                                <rect key="frame" x="229" y="94" width="143" height="58"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
+                        <navigationBar key="tableFooterView" contentMode="scaleToFill" id="XpR-1Q-DT7">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Leader Board" id="2la-iq-9fZ">
+                                    <barButtonItem key="leftBarButtonItem" image="glyphicons-21-home" id="PqE-38-Gbc" userLabel="Home">
+                                        <connections>
+                                            <segue destination="Irk-lY-Cyu" kind="presentation" id="mx7-Lf-ESZ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
+                    </tableView>
                     <tabBarItem key="tabBarItem" title="Leader Board" id="QRy-kg-ZbW"/>
-                </viewController>
+                </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qal-d3-QbQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-506" y="-1747"/>
+            <point key="canvasLocation" x="-506" y="-1753"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--HomeTabBarController-->
         <scene sceneID="UpQ-8r-hi3">
             <objects>
-                <tabBarController id="dHs-ZW-LNJ" sceneMemberID="viewController">
+                <tabBarController id="dHs-ZW-LNJ" userLabel="HomeTabBarController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="sOg-NY-ROe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -423,6 +414,7 @@
                         <segue destination="Caa-4A-HSE" kind="relationship" relationship="viewControllers" id="iDW-5s-4Ww"/>
                         <segue destination="hyH-cd-ky2" kind="relationship" relationship="viewControllers" id="BfH-P6-dTB"/>
                         <segue destination="1bd-2Y-njh" kind="relationship" relationship="viewControllers" id="Wii-ro-dNp"/>
+                        <segue destination="3N1-mU-Jhy" kind="relationship" relationship="viewControllers" id="LXM-4F-huP"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="71Q-kk-y4j" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -534,10 +526,12 @@
             </objects>
             <point key="canvasLocation" x="-2888" y="-668"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Home Navigation-->
         <scene sceneID="1DI-W0-APg">
             <objects>
-                <navigationController id="3N1-mU-Jhy" sceneMemberID="viewController">
+                <navigationController id="3N1-mU-Jhy" userLabel="Home Navigation" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" id="2LS-lQ-eTL"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7g1-8C-e5G">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -615,13 +609,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELCOME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfk-a6-pU2">
-                                <rect key="frame" x="257" y="28" width="87" height="21"/>
+                                <rect key="frame" x="257" y="72" width="87" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current User" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uog-j6-N9I">
-                                <rect key="frame" x="251" y="72" width="98" height="21"/>
+                                <rect key="frame" x="251" y="116" width="98" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="98" id="gxz-hA-HZC"/>
                                     <constraint firstAttribute="height" constant="21" id="wT1-ax-BaS"/>
@@ -631,7 +625,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eE2-5l-vWe">
-                                <rect key="frame" x="260" y="157" width="80" height="41"/>
+                                <rect key="frame" x="260" y="201" width="80" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="BbZ-dy-lQf"/>
                                     <constraint firstAttribute="width" constant="80" id="S6Y-J0-eHO"/>
@@ -646,7 +640,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uL-Ou-WDk">
-                                <rect key="frame" x="16" y="104" width="172" height="109"/>
+                                <rect key="frame" x="16" y="148" width="172" height="65"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Parse Log In"/>
                                 <connections>
@@ -679,6 +673,7 @@
                     <navigationItem key="navigationItem" id="hMP-eo-jWQ">
                         <nil key="title"/>
                     </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="logOutButton" destination="JGL-bF-Xiq" id="urY-MT-sEF"/>
                         <outlet property="parseButton" destination="8uL-Ou-WDk" id="z6I-No-jJT"/>
@@ -973,7 +968,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0Il-RK-H3e">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular-widthClass=compact">
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -1071,7 +1066,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xs4-vX-82s">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular-widthClass=compact">
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -1080,7 +1075,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tlf-J5-bn8">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular-widthClass=compact">
                                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -1206,6 +1201,14 @@
                         <action selector="addThread:" destination="2XZ-tU-Od6" id="a0e-eA-OwB"/>
                     </connections>
                 </barButtonItem>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kKh-Dh-PlO">
+                    <rect key="frame" x="0.0" y="0.0" width="27" height="26"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="glyphicons-21-home">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
             </objects>
             <point key="canvasLocation" x="352" y="-808"/>
         </scene>
@@ -1222,10 +1225,10 @@
         <image name="glyphicons-74-wifi" width="31" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="obf-hk-LON"/>
-        <segue reference="z2O-cg-dUS"/>
-        <segue reference="8Fs-jn-mna"/>
+        <segue reference="uRR-AZ-Vdk"/>
         <segue reference="Oj4-uO-AsV"/>
+        <segue reference="h60-b0-boE"/>
         <segue reference="iqB-gY-N5W"/>
+        <segue reference="obf-hk-LON"/>
     </inferredMetricsTieBreakers>
 </document>
