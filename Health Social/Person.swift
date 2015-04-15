@@ -54,7 +54,7 @@ class Person: PFUser, PFSubclassing, CLLocationManagerDelegate {
     @NSManaged var myPosts: PFRelation
     @NSManaged var checkInCount: NSNumber? // each time a user checks into sportscenter
     @NSManaged var location: PFGeoPoint?
-    var activePlace = -1
+    @NSManaged var activePlace: NSNumber?
     var places = [Dictionary<String,String>()]
     
 
@@ -104,28 +104,34 @@ class Person: PFUser, PFSubclassing, CLLocationManagerDelegate {
 //    }
     
     class func getLocation() {
+        var currentLocation = currentUser()?.location
+        
         var manager: CLLocationManager
-        var currentActive = currentUser()!.activePlace
-        var placeArray = currentUser()!.places
         
         manager = CLLocationManager()
         manager.delegate = self.currentUser()
         manager.desiredAccuracy = kCLLocationAccuracyBest
+
+//        let point = PFGeoPoint(latitude: 40.0, longitude: -30.0)
+//        Person.currentUser()["location"]! = point
         
-        manager.requestWhenInUseAuthorization()
-        manager.startUpdatingLocation()
-        
-        if currentActive == -1 { //asks for permission to use location at beginning
+        if currentUser()?.activePlace != true { //asks for permission to use location at beginning for first time
             manager.requestWhenInUseAuthorization()
             manager.startUpdatingLocation()
-            currentUser()!.incrementKey("numberOfLogins")
+            currentUser()!.activePlace = true
         }
-        else
+        else // sets currentCLLocation
         {
-            var lat = NSString(string: placeArray[currentActive]["lat"]!).doubleValue
-            var lon = NSString(string: placeArray[currentActive]["lon"]!).doubleValue
+            var currentCLLocation = manager.location
         }
-
+        
+        // sets PFGeoPoint in Parse
+        PFGeoPoint.geoPointForCurrentLocationInBackground { currentLocation, error  in
+            if error == nil {
+                println("error in geoPointForCurrentLocation code")
+            }
+        }
+        
         // This function should RETURN the user's location -> possibly for NSNotifications??
         
 //        var manager: CLLocationManager!
