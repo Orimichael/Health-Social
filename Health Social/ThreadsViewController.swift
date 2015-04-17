@@ -16,6 +16,8 @@ class ThreadsViewController: UITableViewController, UITableViewDelegate, UITable
     
     @IBOutlet var threadTable: UITableView!
     
+    @IBOutlet weak var threadsNavigationLabel: UINavigationItem!
+    
     @IBOutlet weak var newThreadField: UITextField!
     
     @IBOutlet weak var saveButtonLabel: UIBarButtonItem!
@@ -85,21 +87,34 @@ class ThreadsViewController: UITableViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
-        newThreadField.hidden = true
-        newThreadField.enabled = false
-        saveButtonLabel.enabled = false
         // Do any additional setup after loading the view.
         
         // Send query to Parse to retrieve the "myThreads" array of threads from the current user and to load it into the viewcontroller's threads array
         if user != nil {
-        var query = user!.myThreads.query()
-        query!.findObjectsInBackgroundWithBlock { (retrievedThreads, error) -> Void in
-            if error != nil { println("\(error!.description)") }
-            threads = (retrievedThreads as! [Thread])
-            self.threadTable.reloadData()
+            if let myCenter = self.user!.myFitnessCenter {
+                threadsNavigationLabel.title = myCenter.name!
+                var queryFitnessCenter = myCenter.centerThreads.query()
+                queryFitnessCenter!.findObjectsInBackgroundWithBlock { (retrievedThreads, error) -> Void in
+                    if error != nil { println("\(error!.description)") }
+                    threads = (retrievedThreads as! [Thread])
+                    self.tableView.reloadData()
+                    }
+                } else {
+                threadsNavigationLabel.title = "\(self.user!.firstName!)" + "'s Threads"
+                var query = self.user!.myThreads.query()
+                query!.findObjectsInBackgroundWithBlock { (retrievedThreads, error) -> Void in
+                    if error != nil { println("\(error!.description)") }
+                    threads = (retrievedThreads as! [Thread])
+                    self.tableView.reloadData()
+                        }
+                    }
             }
-        }
+      
+        newThreadField.hidden = true
+        newThreadField.enabled = false
+        saveButtonLabel.enabled = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -130,7 +145,6 @@ class ThreadsViewController: UITableViewController, UITableViewDelegate, UITable
 //                threads.append(storedThreads[i] as Thread)
 //            }
 //        }
-        
         threadTable.reloadData()
     }
     

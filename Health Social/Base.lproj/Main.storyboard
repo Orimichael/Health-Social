@@ -306,6 +306,7 @@
                         <outlet property="newThreadField" destination="x1S-fj-1ZO" id="gi9-Sg-ngv"/>
                         <outlet property="saveButtonLabel" destination="cVh-jF-Ibi" id="GRI-bG-gIy"/>
                         <outlet property="threadTable" destination="zfp-h4-Laa" id="yUT-u8-PLB"/>
+                        <outlet property="threadsNavigationLabel" destination="ju2-cl-MYT" id="8U0-Dz-wfQ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KBl-7z-Iys" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1225,10 +1226,10 @@
         <image name="glyphicons-74-wifi" width="31" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uRR-AZ-Vdk"/>
-        <segue reference="Oj4-uO-AsV"/>
-        <segue reference="h60-b0-boE"/>
         <segue reference="iqB-gY-N5W"/>
+        <segue reference="z2O-cg-dUS"/>
+        <segue reference="h60-b0-boE"/>
+        <segue reference="Oj4-uO-AsV"/>
         <segue reference="obf-hk-LON"/>
     </inferredMetricsTieBreakers>
 </document>
