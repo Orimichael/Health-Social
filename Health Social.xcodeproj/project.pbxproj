@@ -11,6 +11,7 @@
 		AE3D9F2B1AAE6FF100A43370 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3D9F2A1AAE6FF100A43370 /* HomeViewController.swift */; };
 		AE3D9F2D1AAE7BF300A43370 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3D9F2C1AAE7BF300A43370 /* SignUpViewController.swift */; };
 		AE9E0AE11AE170BC007429C6 /* ProfilePageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9E0AE01AE170BC007429C6 /* ProfilePageContentViewController.swift */; };
+		AE9E0AE31AE18BCF007429C6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9E0AE21AE18BCF007429C6 /* ProfileViewController.swift */; };
 		AECA783B1AAF743A00074BE9 /* NewUserTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECA783A1AAF743A00074BE9 /* NewUserTabBarController.swift */; };
 		AECA78401AB2041800074BE9 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECA783E1AB2041800074BE9 /* Bolts.framework */; };
 		AECA784B1AB204F600074BE9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECA78421AB204F600074BE9 /* AudioToolbox.framework */; };
@@ -58,6 +59,7 @@
 		AE3D9F2A1AAE6FF100A43370 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AE3D9F2C1AAE7BF300A43370 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		AE9E0AE01AE170BC007429C6 /* ProfilePageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePageContentViewController.swift; sourceTree = "<group>"; };
+		AE9E0AE21AE18BCF007429C6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		AECA783A1AAF743A00074BE9 /* NewUserTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserTabBarController.swift; sourceTree = "<group>"; };
 		AECA783E1AB2041800074BE9 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		AECA78421AB204F600074BE9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				AEF222AE1AC9FF6300B93F43 /* Main.storyboard */,
+				AE9E0AE21AE18BCF007429C6 /* ProfileViewController.swift */,
 				AE9E0AE01AE170BC007429C6 /* ProfilePageContentViewController.swift */,
 				AED70E3B1AD307B60075CCBC /* LeaderBoardTableViewController.swift */,
 				AEF2229C1AC4980900B93F43 /* PeerListViewController.swift */,
@@ -298,6 +301,7 @@
 				AEDCDAF71AAE0D4200F35E0B /* LoginViewController.swift in Sources */,
 				AEDCDAF51AAE073100F35E0B /* Person.swift in Sources */,
 				AEF2229F1AC4980900B93F43 /* PeerListViewController.swift in Sources */,
+				AE9E0AE31AE18BCF007429C6 /* ProfileViewController.swift in Sources */,
 				AEF222AD1AC9EBC700B93F43 /* PostsViewController.swift in Sources */,
 				AEF222A11AC4980900B93F43 /* MPCManager.swift in Sources */,
 				AEF222A31AC9C06800B93F43 /* MessageBoard.swift in Sources */,

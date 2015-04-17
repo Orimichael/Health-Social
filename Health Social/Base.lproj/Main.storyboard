@@ -689,7 +689,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="s41-ih-zqg" kind="presentation" id="vdD-y5-l4J"/>
+                                    <segue destination="S6B-Qk-AEy" kind="presentation" identifier="homeToEditProfile" id="gzo-Ix-bdp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -789,6 +789,43 @@
             </objects>
             <point key="canvasLocation" x="-1326" y="80"/>
         </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="kjR-P5-4E0">
+            <objects>
+                <viewController id="S6B-Qk-AEy" customClass="ProfileViewController" customModule="Health_Social" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GN9-s5-3Jr"/>
+                        <viewControllerLayoutGuide type="bottom" id="KFw-Z6-eeL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XiJ-fa-nid">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVK-Nb-ZF7">
+                                <rect key="frame" x="225" y="474" width="150" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="8yw-6D-rut"/>
+                                    <constraint firstAttribute="height" constant="40" id="fOE-DJ-bHc"/>
+                                </constraints>
+                                <state key="normal" title="Restart Profile Details">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="restartProfileDetails:" destination="S6B-Qk-AEy" eventType="touchUpInside" id="jOz-2y-fVT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="PVK-Nb-ZF7" secondAttribute="centerX" id="iU5-LN-sLk"/>
+                            <constraint firstItem="KFw-Z6-eeL" firstAttribute="top" secondItem="PVK-Nb-ZF7" secondAttribute="bottom" constant="86" id="vHq-X8-yrU"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2o2-zp-EVD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3596" y="1177"/>
+        </scene>
         <!--Page View Controller-->
         <scene sceneID="0z2-hg-LVX">
             <objects>
@@ -818,12 +855,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbB-xC-yyr">
-                                <rect key="frame" x="225" y="511" width="151" height="38"/>
-                                <state key="normal" title="Restart Profile Details">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

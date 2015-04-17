@@ -16,10 +16,22 @@ class ProfilePageContentViewController: UIViewController {
     @IBOutlet weak var backgroundImageView: UIImageView!
     
     
+    var pageIndex: Int? = nil
+    var titleText: String? = nil
+    var imageFile: String? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.backgroundImageView.image = UIImage(named: self.imageFile!)
+        self.myProfileLabel.text = self.titleText!
+        self.myProfileLabel.alpha = 0.1
+        UIView.animateWithDuration(1.0, animations: { () -> Void in
+            self.myProfileLabel.alpha = 1.0
+        })
+        
     }
 
     override func didReceiveMemoryWarning() {
