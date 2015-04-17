@@ -10,6 +10,7 @@
 		AE1F724A1AD99110004B037E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE1F72491AD99110004B037E /* MapKit.framework */; };
 		AE3D9F2B1AAE6FF100A43370 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3D9F2A1AAE6FF100A43370 /* HomeViewController.swift */; };
 		AE3D9F2D1AAE7BF300A43370 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3D9F2C1AAE7BF300A43370 /* SignUpViewController.swift */; };
+		AE9E0AE11AE170BC007429C6 /* ProfilePageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9E0AE01AE170BC007429C6 /* ProfilePageContentViewController.swift */; };
 		AECA783B1AAF743A00074BE9 /* NewUserTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECA783A1AAF743A00074BE9 /* NewUserTabBarController.swift */; };
 		AECA78401AB2041800074BE9 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECA783E1AB2041800074BE9 /* Bolts.framework */; };
 		AECA784B1AB204F600074BE9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECA78421AB204F600074BE9 /* AudioToolbox.framework */; };
@@ -56,6 +57,7 @@
 		AE1F72491AD99110004B037E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AE3D9F2A1AAE6FF100A43370 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AE3D9F2C1AAE7BF300A43370 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		AE9E0AE01AE170BC007429C6 /* ProfilePageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePageContentViewController.swift; sourceTree = "<group>"; };
 		AECA783A1AAF743A00074BE9 /* NewUserTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserTabBarController.swift; sourceTree = "<group>"; };
 		AECA783E1AB2041800074BE9 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		AECA78421AB204F600074BE9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -181,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				AEF222AE1AC9FF6300B93F43 /* Main.storyboard */,
+				AE9E0AE01AE170BC007429C6 /* ProfilePageContentViewController.swift */,
 				AED70E3B1AD307B60075CCBC /* LeaderBoardTableViewController.swift */,
 				AEF2229C1AC4980900B93F43 /* PeerListViewController.swift */,
 				AEF2229D1AC4980900B93F43 /* ChatViewController.swift */,
@@ -309,6 +312,7 @@
 				AEF222A91AC9CAB900B93F43 /* ThreadsViewController.swift in Sources */,
 				AE3D9F2B1AAE6FF100A43370 /* HomeViewController.swift in Sources */,
 				AED70E3C1AD307B60075CCBC /* LeaderBoardTableViewController.swift in Sources */,
+				AE9E0AE11AE170BC007429C6 /* ProfilePageContentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
