@@ -35,6 +35,7 @@ class Person: PFUser, PFSubclassing, CLLocationManagerDelegate {
     @NSManaged var photo: PFImageView?
     @NSManaged var fitnessGoals: NSArray? //Will consider using Parse Relationship object... relation is a pointer
     var myFitnessCenter: SportsCenter? = nil
+    @NSManaged var myStoredFitnessCenter: PFRelation
     @NSManaged var height: NSNumber? // inches or cm //NSNumber for Int or Bool
     @NSManaged var weight: NSNumber? // pounds or kg
     @NSManaged var age: NSNumber? // years
@@ -56,6 +57,7 @@ class Person: PFUser, PFSubclassing, CLLocationManagerDelegate {
     @NSManaged var location: PFGeoPoint?
     @NSManaged var activePlace: NSNumber?
     var places = [Dictionary<String,String>()]
+    @NSManaged var gender: NSString?
     
 
     

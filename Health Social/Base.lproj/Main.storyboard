@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3N1-mU-Jhy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3N1-mU-Jhy">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -122,9 +122,32 @@
                                     <action selector="saveButtonTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="HhB-70-QOZ"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Scv-gK-LpG">
+                                <rect key="frame" x="535" y="94" width="51" height="31"/>
+                                <connections>
+                                    <action selector="genderSwitch:" destination="9pv-A4-QxB" eventType="valueChanged" id="Uez-JT-2Ds"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SyC-SM-7CQ">
+                                <rect key="frame" x="535" y="34" width="49" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="8iq-k6-p3K"/>
+                                    <constraint firstAttribute="width" constant="49" id="lgq-cg-rwJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iju-oC-GAp">
+                                <rect key="frame" x="464" y="99" width="57" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="Scv-gK-LpG" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="2tn-k8-98e"/>
                             <constraint firstItem="jfZ-zM-P1a" firstAttribute="trailing" secondItem="F3u-bQ-3Xi" secondAttribute="trailing" id="7Ix-YX-qWR"/>
                             <constraint firstItem="F3u-bQ-3Xi" firstAttribute="top" secondItem="jfZ-zM-P1a" secondAttribute="bottom" constant="30" id="7Pa-0Z-gmO"/>
                             <constraint firstItem="q8s-EY-tKB" firstAttribute="top" secondItem="4Lg-di-EIk" secondAttribute="top" id="7Yl-XF-7d4"/>
@@ -140,11 +163,14 @@
                             <constraint firstItem="R2u-WY-RIr" firstAttribute="leading" secondItem="XuM-ZG-Mif" secondAttribute="leading" id="JhJ-8S-jTn"/>
                             <constraint firstItem="JSh-yK-6jS" firstAttribute="leading" secondItem="twp-9X-f1s" secondAttribute="leading" id="Kz6-df-xyM"/>
                             <constraint firstItem="KQZ-1w-vlD" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="LfT-ws-FhC"/>
+                            <constraint firstItem="Scv-gK-LpG" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="74" id="MbA-lP-AyA"/>
                             <constraint firstItem="q8s-EY-tKB" firstAttribute="trailing" secondItem="KQZ-1w-vlD" secondAttribute="trailing" id="OMv-wT-JVG"/>
                             <constraint firstItem="UFF-u7-sJY" firstAttribute="leading" secondItem="lrX-5q-7hS" secondAttribute="leading" id="Od4-gq-RPO"/>
                             <constraint firstItem="q8s-EY-tKB" firstAttribute="baseline" secondItem="4Lg-di-EIk" secondAttribute="baseline" id="Pfc-Qr-a5B"/>
                             <constraint firstItem="4Lg-di-EIk" firstAttribute="leading" secondItem="q8s-EY-tKB" secondAttribute="trailing" constant="8" symbolic="YES" id="Prf-rr-N4c"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="khu-tu-YXZ" secondAttribute="bottom" constant="132" id="QRX-mE-Ebm"/>
+                            <constraint firstItem="Iju-oC-GAp" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="79" id="Qin-Yy-HoI"/>
+                            <constraint firstItem="Scv-gK-LpG" firstAttribute="top" secondItem="SyC-SM-7CQ" secondAttribute="bottom" constant="24" id="TpV-2p-HXT"/>
                             <constraint firstItem="jfZ-zM-P1a" firstAttribute="leading" secondItem="F3u-bQ-3Xi" secondAttribute="leading" id="WyH-7Y-gB3"/>
                             <constraint firstItem="4Lg-di-EIk" firstAttribute="trailing" secondItem="twp-9X-f1s" secondAttribute="trailing" id="XRp-MO-gKt"/>
                             <constraint firstItem="KQZ-1w-vlD" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="8" symbolic="YES" id="Z2n-3j-zwh"/>
@@ -162,7 +188,9 @@
                             <constraint firstItem="JSh-yK-6jS" firstAttribute="top" secondItem="twp-9X-f1s" secondAttribute="bottom" constant="30" id="pkP-gj-QiF"/>
                             <constraint firstItem="lrX-5q-7hS" firstAttribute="leading" secondItem="jfZ-zM-P1a" secondAttribute="leading" id="q1c-Us-x9q"/>
                             <constraint firstItem="twp-9X-f1s" firstAttribute="trailing" secondItem="JSh-yK-6jS" secondAttribute="trailing" id="rN7-ZX-S69"/>
+                            <constraint firstItem="Scv-gK-LpG" firstAttribute="leading" secondItem="Iju-oC-GAp" secondAttribute="trailing" constant="14" id="s3y-bs-Mc7"/>
                             <constraint firstItem="q8s-EY-tKB" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="24" id="sg5-u8-ttI"/>
+                            <constraint firstItem="SyC-SM-7CQ" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="yjJ-va-ZhC"/>
                             <constraint firstItem="twp-9X-f1s" firstAttribute="leading" secondItem="UFF-u7-sJY" secondAttribute="trailing" constant="8" symbolic="YES" id="zGE-Yi-qal"/>
                             <constraint firstItem="R2u-WY-RIr" firstAttribute="top" secondItem="XuM-ZG-Mif" secondAttribute="bottom" constant="24" id="zrf-J7-PLo"/>
                         </constraints>
@@ -174,6 +202,7 @@
                         <outlet property="birthdateText" destination="F3u-bQ-3Xi" id="L5w-0f-03c"/>
                         <outlet property="emailText" destination="lrX-5q-7hS" id="fS4-JC-PXk"/>
                         <outlet property="firstNameText" destination="q8s-EY-tKB" id="JyW-Gq-haI"/>
+                        <outlet property="genderLabel" destination="SyC-SM-7CQ" id="l0E-Qm-BD4"/>
                         <outlet property="heightText" destination="enI-uv-3Ko" id="RKj-Ul-3LP"/>
                         <outlet property="lastNameText" destination="UFF-u7-sJY" id="Khz-sb-pdQ"/>
                         <outlet property="phoneText" destination="jfZ-zM-P1a" id="w3P-K2-Uql"/>
@@ -1226,10 +1255,10 @@
         <image name="glyphicons-74-wifi" width="31" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iqB-gY-N5W"/>
-        <segue reference="z2O-cg-dUS"/>
-        <segue reference="h60-b0-boE"/>
+        <segue reference="uRR-AZ-Vdk"/>
         <segue reference="Oj4-uO-AsV"/>
+        <segue reference="Lnb-Pu-rJj"/>
+        <segue reference="iqB-gY-N5W"/>
         <segue reference="obf-hk-LON"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -19,6 +19,8 @@ class NewUserTabBarController: UIViewController {
         clearAllTextfields()
     }
     
+    @IBOutlet weak var genderLabel: UILabel!
+    
     @IBOutlet weak var requiredFields: UILabel!
     
     @IBOutlet weak var firstNameText: UITextField!
@@ -34,6 +36,16 @@ class NewUserTabBarController: UIViewController {
     @IBOutlet weak var heightText: UITextField!
     
     @IBOutlet weak var weightText: UITextField!
+    
+    @IBAction func genderSwitch(sender: UISwitch) {
+        if sender.on {
+            genderLabel.text = "Male"
+            Person.currentUser()!.gender = "Male"
+        } else {
+            genderLabel.text = "Female"
+            Person.currentUser()!.gender = "Female"
+        }
+    }
     
     @IBAction func saveButtonTapped(sender: UIButton) {
         var current = Person.currentUser()

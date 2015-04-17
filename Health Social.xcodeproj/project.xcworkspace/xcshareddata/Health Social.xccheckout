@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>562277D8-407A-48B8-9D71-C32894B9898C</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Health Social</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>E5898C4D36569D701D141D847E78E865B0BDE42C</key>
 		<string>https://github.com/Orimichael/Health-Social.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Health Social.xcodeproj</string>
+	<string>Health Social.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>E5898C4D36569D701D141D847E78E865B0BDE42C</key>
