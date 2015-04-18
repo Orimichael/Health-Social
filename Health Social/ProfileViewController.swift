@@ -9,10 +9,9 @@
 import UIKit
 
 class ProfileViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
-
-    var pageViewController = UIPageViewController()
-    var pageTitles = []
-    var pageImages = []
+    var pageViewController: UIPageViewController!
+    var pageTitles = ["\(Person.currentUser()!.firstName!) Details One", "\(Person.currentUser()!.firstName!) Details Two", "\(Person.currentUser()!.firstName!) Details Three"]
+    var pageImages = ["Profile_background_image", "Profile_background_image", "Profile_background_image"]
     var count = 0
     
     @IBAction func swipeLeft(sender: AnyObject) {
@@ -27,9 +26,13 @@ class ProfileViewController: UIViewController, UIPageViewControllerDataSource, U
     
     func reset() {
         // Getting page view controller
-        pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController
-        self.pageViewController.setViewControllers([ProfilePageContentViewController](), direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
+        pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ProfilePageViewController")
+            as! UIPageViewController
+        self.pageViewController.dataSource = self
         
+        let pageContentViewController = self.viewControllerAtIndex(0)
+        self.pageViewController.setViewControllers([pageContentViewController!], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
+
         self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height - 30)
         self.addChildViewController(pageViewController)
         self.view.addSubview(pageViewController.view)
@@ -38,8 +41,8 @@ class ProfileViewController: UIViewController, UIPageViewControllerDataSource, U
     }
     
     @IBAction func restartProfileDetails(sender: UIButton) {
-        
-        
+        let pageContentViewController = self.viewControllerAtIndex(0)
+        self.pageViewController.setViewControllers([pageContentViewController!], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
     }
     
     
@@ -48,8 +51,6 @@ class ProfileViewController: UIViewController, UIPageViewControllerDataSource, U
 
         // Do any additional setup after loading the view.
         reset()
-        pageTitles = [1, 2, 3]
-        pageImages = ["one", "two", "three"]
     }
 
     override func didReceiveMemoryWarning() {
@@ -83,12 +84,12 @@ class ProfileViewController: UIViewController, UIPageViewControllerDataSource, U
         if((self.pageTitles.count == 0) || (index >= self.pageTitles.count)) {
             return nil
         }
-        let pageContentViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageContentViewController") as! ProfilePageContentViewController
+        let pageContentViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ProfilePageContentViewController") as! ProfilePageContentViewController
         
-        ProfilePageContentViewController.imageFile = self.pageImages[index]
-        ProfilePageContentViewController.titleText = self.pageTitles[index]
-        ProfilePageContentViewController.pageIndex = index
-        return ProfilePageContentViewController
+        pageContentViewController.imageFile = self.pageImages[index]
+        pageContentViewController.titleText = self.pageTitles[index]
+        pageContentViewController.pageIndex = index
+        return pageContentViewController
     }
     
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {

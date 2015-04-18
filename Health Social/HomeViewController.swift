@@ -17,6 +17,9 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var logOutButton: UIButton!
     
+    @IBAction func editMyProfile(sender: UIButton) {
+        performSegueWithIdentifier("goToEditProfile", sender: self)
+    }
     @IBAction func parseTapped(sender: UIButton) {
         var currentUser = Person.currentUser()
         if currentUser != nil {

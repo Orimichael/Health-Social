@@ -12,6 +12,7 @@
 		AE3D9F2D1AAE7BF300A43370 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3D9F2C1AAE7BF300A43370 /* SignUpViewController.swift */; };
 		AE9E0AE11AE170BC007429C6 /* ProfilePageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9E0AE01AE170BC007429C6 /* ProfilePageContentViewController.swift */; };
 		AE9E0AE31AE18BCF007429C6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9E0AE21AE18BCF007429C6 /* ProfileViewController.swift */; };
+		AE9E0AE51AE1DC67007429C6 /* Profile_background_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE9E0AE41AE1DC67007429C6 /* Profile_background_image.jpg */; };
 		AECA783B1AAF743A00074BE9 /* NewUserTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECA783A1AAF743A00074BE9 /* NewUserTabBarController.swift */; };
 		AECA78401AB2041800074BE9 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECA783E1AB2041800074BE9 /* Bolts.framework */; };
 		AECA784B1AB204F600074BE9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECA78421AB204F600074BE9 /* AudioToolbox.framework */; };
@@ -60,6 +61,7 @@
 		AE3D9F2C1AAE7BF300A43370 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		AE9E0AE01AE170BC007429C6 /* ProfilePageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePageContentViewController.swift; sourceTree = "<group>"; };
 		AE9E0AE21AE18BCF007429C6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		AE9E0AE41AE1DC67007429C6 /* Profile_background_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Profile_background_image.jpg; sourceTree = "<group>"; };
 		AECA783A1AAF743A00074BE9 /* NewUserTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserTabBarController.swift; sourceTree = "<group>"; };
 		AECA783E1AB2041800074BE9 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		AECA78421AB204F600074BE9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -139,6 +141,7 @@
 		AECA80721AB8DE3500074BE9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AE1F72491AD99110004B037E /* MapKit.framework */,
 				AECA80701AB77F4F00074BE9 /* Parse.framework */,
 				AECA806D1AB7781900074BE9 /* Accounts.framework */,
 				AECA806B1AB7780A00074BE9 /* Social.framework */,
@@ -166,7 +169,6 @@
 		AEDCDAC21AA8E17700F35E0B = {
 			isa = PBXGroup;
 			children = (
-				AE1F72491AD99110004B037E /* MapKit.framework */,
 				AEDCDACD1AA8E17800F35E0B /* Health Social */,
 				AEDCDACC1AA8E17800F35E0B /* Products */,
 				AECA78691AB2151B00074BE9 /* Health Social-Bridging-Header.h */,
@@ -206,6 +208,7 @@
 				AEDCDAF41AAE073100F35E0B /* Person.swift */,
 				AEDCDAF21AA8E93700F35E0B /* SettingsTableViewController.swift */,
 				AEDCDAD91AA8E17800F35E0B /* Images.xcassets */,
+				AE9E0AE41AE1DC67007429C6 /* Profile_background_image.jpg */,
 				AEDCDADB1AA8E17800F35E0B /* LaunchScreen.xib */,
 				AEDCDACE1AA8E17800F35E0B /* Supporting Files */,
 				AEDCDAF61AAE0D4200F35E0B /* LoginViewController.swift */,
@@ -283,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEF222B01AC9FF6300B93F43 /* Main.storyboard in Resources */,
+				AE9E0AE51AE1DC67007429C6 /* Profile_background_image.jpg in Resources */,
 				AEDCDADD1AA8E17800F35E0B /* LaunchScreen.xib in Resources */,
 				AEDCDADA1AA8E17800F35E0B /* Images.xcassets in Resources */,
 			);
