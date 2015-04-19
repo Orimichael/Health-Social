@@ -15,6 +15,7 @@ class ProfilePageContentViewController: UIViewController {
     
     @IBOutlet weak var backgroundImageView: UIImageView!
     
+    @IBOutlet weak var profilePicture: UIImageView!
     
     var pageIndex: Int?
     var titleText: String!

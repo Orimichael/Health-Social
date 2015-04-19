@@ -9,7 +9,7 @@
 import UIKit
 
 
-class NewUserTabBarController: UIViewController {
+class NewUserTabBarController: UIViewController, UIImagePickerControllerDelegate {
     
     
     override func viewDidAppear(animated: Bool) {
@@ -18,6 +18,8 @@ class NewUserTabBarController: UIViewController {
         requiredFields.hidden = true
         clearAllTextfields()
     }
+    
+    @IBOutlet weak var userPhoto: UIImageView!
     
     @IBOutlet weak var genderLabel: UILabel!
     
@@ -36,6 +38,20 @@ class NewUserTabBarController: UIViewController {
     @IBOutlet weak var heightText: UITextField!
     
     @IBOutlet weak var weightText: UITextField!
+    
+    @IBAction func loadPhoto(sender: UIButton) {
+        let imagePicker = UIImagePickerController()
+        
+//        imagePicker.delegate = self
+//        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+//        imagePicker.mediaTypes = [kUTTypeImage as NSString]
+//        imagePicker.allowsEditing = false
+//        
+//        self.presentViewController(imagePicker, animated: true,
+//            completion: nil)
+    }
+    
+    
     
     @IBAction func genderSwitch(sender: UISwitch) {
         if sender.on {
