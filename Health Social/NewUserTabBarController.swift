@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import MobileCoreServices
 
 
-class NewUserTabBarController: UIViewController, UIImagePickerControllerDelegate {
+class NewUserTabBarController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
+    var newMedia: Bool?
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -40,18 +42,37 @@ class NewUserTabBarController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var weightText: UITextField!
     
     @IBAction func loadPhoto(sender: UIButton) {
-        let imagePicker = UIImagePickerController()
         
-//        imagePicker.delegate = self
-//        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-//        imagePicker.mediaTypes = [kUTTypeImage as NSString]
-//        imagePicker.allowsEditing = false
-//        
-//        self.presentViewController(imagePicker, animated: true,
-//            completion: nil)
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.SavedPhotosAlbum) {
+            let imagePicker = UIImagePickerController()
+        
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            imagePicker.mediaTypes = [kUTTypeImage as NSString]
+            imagePicker.allowsEditing = false
+        
+            self.presentViewController(imagePicker, animated: true,
+            completion: nil)
+            
+            newMedia = false
+        }
     }
     
-    
+    @IBAction func takePhoto(sender: UIButton) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+            let imagePicker = UIImagePickerController()
+            
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+            imagePicker.mediaTypes = [kUTTypeImage as NSString]
+            imagePicker.allowsEditing = false
+            
+            self.presentViewController(imagePicker, animated: true, completion: nil)
+            
+            newMedia = true
+            
+        }
+    }
     
     @IBAction func genderSwitch(sender: UISwitch) {
         if sender.on {
@@ -183,6 +204,44 @@ class NewUserTabBarController: UIViewController, UIImagePickerControllerDelegate
         heightText.text = nil
         weightText.text = nil
     }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfor info: [NSObject: AnyObject]) {
+        
+        let mediaType = info[UIImagePickerControllerMediaType] as! String
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+        if mediaType == (kUTTypeImage as! String) {
+            let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+            
+            userPhoto.image = image
+            Person.currentUser()!.photo!.image! = image
+            
+            Person.currentUser()!.photo!.loadInBackground()
+            
+            if (newMedia == true) {
+                UIImageWriteToSavedPhotosAlbum(image, self, "image:didFinishSavingWithError:contextInfo:", nil)
+            }
+            
+        }
+    }
+    
+    func image(image: UIImage, didFinishSavingWithError error: NSErrorPointer, contextInfo: UnsafePointer<Void>) {
+        
+        if error != nil {
+            let alert = UIAlertController(title: "Save Failed", message: "Failed to save image", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            let cancelAction = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
+            
+            alert.addAction(cancelAction)
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     
     func requiredFieldsFilled() -> Bool {
         if firstNameText.text != "" && lastNameText.text != "" && emailText.text != "" {

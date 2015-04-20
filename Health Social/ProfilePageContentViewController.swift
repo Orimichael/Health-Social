@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MobileCoreServices
 
-class ProfilePageContentViewController: UIViewController {
+class ProfilePageContentViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     @IBOutlet weak var myProfileLabel: UILabel!
     
@@ -21,6 +22,12 @@ class ProfilePageContentViewController: UIViewController {
     var titleText: String!
     var imageFile: String!
     
+    @IBAction func cancel(sender: UIBarButtonItem) {
+    }
+    
+    @IBAction func save(sender: UIBarButtonItem) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,6 +39,11 @@ class ProfilePageContentViewController: UIViewController {
         UIView.animateWithDuration(1.0, animations: { () -> Void in
             self.myProfileLabel.alpha = 1.0
         })
+        
+        if let userPhoto = Person.currentUser()!.photo {
+            profilePicture.image = userPhoto.image
+            profilePicture.insertSubview(profilePicture, aboveSubview: backgroundImageView)
+        }
         
     }
 
